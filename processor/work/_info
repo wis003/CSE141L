@@ -9,38 +9,144 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA_lite/20.1
-vInstROM
+vALU
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1644388451
-!i10b 1
-!s100 GHBE2>ETEcPPWaIJl>hTW2
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-II8Y`N]18^QBKBQ4KXZ2Tm0
+Z1 DXx4 work 11 definitions 0 22 DBE=8Vd`aB=]FdhPz^Yn]0
+DXx4 work 11 ALU_sv_unit 0 22 311:5A6gY3N0[RkAjO7ji2
+Z2 !s110 1644389684
 Z3 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 WH8WjkN]i`XOzD9?XOl=j2
+Ia2bSGGL=_DiKPoH>Gl3IV0
+!s105 ALU_sv_unit
 S1
 Z4 dC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor
-w1644384558
-8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
-FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
-!i122 14
-L0 3 14
-Z5 OV;L;2020.1;71
+Z5 w1644389354
+Z6 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv
+Z7 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv
+!i122 33
+L0 4 38
+Z8 OV;L;2020.1;71
+31
+Z9 !s108 1644389684.000000
+Z10 !s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv|
+Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv|
+!i113 1
+Z12 o-work work -sv
+Z13 tCvgOpt 0
+n@a@l@u
+XALU_sv_unit
+R0
+R1
+R2
+V311:5A6gY3N0[RkAjO7ji2
+r1
+!s85 0
+!i10b 1
+!s100 gkR=VFldmXZ1lz<b>hoGl3
+I311:5A6gY3N0[RkAjO7ji2
+!i103 1
+S1
+R4
+R5
+R6
+R7
+!i122 33
+L0 1 0
+R8
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+n@a@l@u_sv_unit
+vALU_tb
+R0
+R2
+!i10b 1
+!s100 mFX_hc[3biPCK@EMVedGi3
+Z14 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I7iL@H[@NQTo@H2BJ8YR<>0
+R3
+S1
+R4
+w1644389675
+8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU_tb.sv
+FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU_tb.sv
+!i122 34
+L0 6 100
+R8
 r1
 !s85 0
 31
-Z6 !s108 1644388451.000000
+R9
+!s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU_tb.sv|
+!i113 1
+R12
+R13
+n@a@l@u_tb
+Xdefinitions
+R0
+R2
+!i10b 1
+!s100 XiICAa9Q8Mg:VeAod032[0
+R14
+IDBE=8Vd`aB=]FdhPz^Yn]0
+VDBE=8Vd`aB=]FdhPz^Yn]0
+S1
+R4
+w1644284557
+8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv
+FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv
+!i122 35
+L0 4 0
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv|
+!i113 1
+R12
+R13
+vInstROM
+R0
+R2
+!i10b 1
+!s100 GHBE2>ETEcPPWaIJl>hTW2
+R14
+II8Y`N]18^QBKBQ4KXZ2Tm0
+R3
+S1
+R4
+w1644384558
+8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
+FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
+!i122 30
+L0 3 14
+R8
+r1
+!s85 0
+31
+R9
 !s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv|
 !i113 1
-Z7 o-work work -sv
-Z8 tCvgOpt 0
+R12
+R13
 n@inst@r@o@m
 vInstructionFetch_tb
 R0
-R1
+R2
 !i10b 1
 !s100 [JIhXAT6:J?f68gS9TcXm2
-R2
+R14
 IT?;g]1Yz^l:376YzhnG2`1
 R3
 S1
@@ -48,25 +154,25 @@ R4
 w1644387753
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv
-!i122 15
+!i122 31
 L0 6 93
-R5
+R8
 r1
 !s85 0
 31
-R6
+R9
 !s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv|
 !i113 1
-R7
-R8
+R12
+R13
 n@instruction@fetch_tb
 vProgCtr
 R0
-R1
+R2
 !i10b 1
 !s100 oik>d]z1dgP4_g1eTc3Je3
-R2
+R14
 IjR7lAm^<cobM2ThdYe[_J0
 R3
 S1
@@ -74,16 +180,16 @@ R4
 w1644388404
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv
-!i122 16
+!i122 32
 L0 2 41
-R5
+R8
 r1
 !s85 0
 31
-R6
+R9
 !s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv|
 !i113 1
-R7
-R8
+R12
+R13
 n@prog@ctr

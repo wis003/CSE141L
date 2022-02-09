@@ -4,56 +4,100 @@
 `timescale 1ns/ 1ps
 
 module ALU_tb;
-  logic [ 7:0] INPUTA;        // data inputs
-  logic [ 7:0] INPUTB;
-  logic [ 2:0] op;  // ALU opcode, part of microcode
-  bit SC_IN = 'b0;
-  wire[ 7:0] OUT;
+  logic [7:0] InputA;        // data inputs
+  logic [7:0] InputB;
+  logic [3:0] OP;  // ALU opcode, part of microcode
+  bit SC_in = 'b0;
+  wire  [7:0] Out;
   wire Zero;
-  logic [ 7:0] expected;
+  wire Parity;
+  wire Odd;
+  logic [7:0] expected;
 
   // CONNECTION
   ALU uut(
-    .InputA(INPUTA),
-    .InputB(INPUTB),
-    .SC_in(SC_IN),
-    .OP(op),
-    .Out(OUT),
-    .Zero(Zero)
+    .InputA,
+    .InputB,
+    .SC_in,
+    .OP,
+    .Out,
+    .Zero,
+    .Parity,
+    .Odd
       );
 
   initial begin
 
-  INPUTA = 1;
-  INPUTB = 1;
-  op= 'b000; // ADD
-  test_alu_func; // void function call
+  InputA = 4;
+  InputB = 1;
+
+  OP= 'd0;
+  test_alu_func;
   #5;
 
-
-  INPUTA = 4;
-  INPUTB = 1;
-  op= 'b100; // AND
-  test_alu_func; // void function call
+  OP= 'd1;
+  test_alu_func;
   #5;
+
+  OP= 'd2;
+  test_alu_func;
+  #5;
+
+  OP= 'd3;
+  test_alu_func;
+  #5;
+
+  OP= 'd4;
+  test_alu_func;
+  #5;
+
+  OP= 'd5;
+  test_alu_func;
+  #5;
+
+  OP= 'd6;
+  test_alu_func;
+  #5;
+
+  OP= 'd7;
+  test_alu_func;
+  #5;
+
+  OP= 'd8;
+  test_alu_func;
+  #5;
+
+  OP= 'd9;
+  test_alu_func;
+  #5;
+
+  OP= 'd10;
+  test_alu_func;
+  #5;
+
   end
 
   task test_alu_func;
     begin
-      case (op)
-        0: expected = INPUTA + INPUTB;  // ADD 
-        1: expected = {INPUTA[6:0], SC_IN};  // LSH
-        2: expected = {1'b0, INPUTA[7:1]};  // RSH
-        3: expected = INPUTA ^ INPUTB;  // XOR
-        4: expected = INPUTA & INPUTB;     //AND
-        5: expected = INPUTA - INPUTB;   // SUB
+      case (OP)
+        0 : expected = InputA + InputB;        // add
+        1 : expected = InputA - InputB;        // sub
+        2 : expected = InputA & InputB;        // bitwise AND
+        3 : expected = ~(InputA | InputB);       // bitwise NOR
+        4 : expected = InputA ^ InputB;        // bitwise XOR
+        5 : expected = InputA >> InputB;       // shift left
+        6 : expected = InputA << InputB;       // shift right
+        7 : expected = InputA == InputB;       // equals
+        8 : expected = InputA != InputB;       // not equals
+        9 : expected = InputA > InputB;        // greater than
+       10 : expected = InputA < InputB;        // less than
       endcase
 
-      #1; if (expected == OUT)
+      #1; if (expected == Out)
             begin
-              $display("%t YAY!! inputs = %h %h, opcode = %b, Zero %b",$time, INPUTA,INPUTB,op, Zero);
+              $display("%t YAY!! inputs = %h %h, OPcode = %b, Zero %b", $time, InputA, InputB, OP, Zero);
             end
-          else begin $display("%t FAIL! inputs = %h %h, opcode = %b, zero %b",$time, INPUTA,INPUTB,op, Zero); end
+          else begin $display("%t FAIL! inputs = %h %h, OPcode = %b, zero %b", $time, InputA, InputB, OP, Zero); end
 
     end
   endtask

@@ -20,7 +20,7 @@ module ALU #(parameter W=8, Ops=4) (
       ADD : Out = InputA + InputB;        // add
       SUB : Out = InputA + (~InputB) + 1; // sub
       AND : Out = InputA & InputB;        // bitwise AND
-      NOR : Out = InputA ~| InputB;       // bitwise NOR
+      NOR : Out = ~(InputA | InputB);       // bitwise NOR
       XOR : Out = InputA ^ InputB;        // bitwise XOR
       LSH : Out = InputA >> InputB;       // shift left
       RSH : Out = InputA << InputB;       // shift right
