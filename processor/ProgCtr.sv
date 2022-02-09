@@ -13,7 +13,7 @@ module ProgCtr #(parameter L=10) (
   logic [1:0] startCount;
 
   // program counter can clear to 0, increment, or jump
-  always_ff @(posedge Clk)	           // or just always; always_ff is a linting construct
+  always_ff @(posedge Clk) begin	           // or just always; always_ff is a linting construct
 	if (BranchAbs)	               // unconditional absolute jump
 	  ProgCtr <= Target;			   //   how would you make it conditional and/or relative?
 	else if (BranchRel)   			   // conditional relative jump
@@ -23,18 +23,21 @@ module ProgCtr #(parameter L=10) (
 
 	// override default behavior
 	if (Reset) begin
-		ProgCtr <= 0;
+		ProgCtr <= 'd0;
 		startCount <= '0;
 	end else if (Start)	begin				   // hold while start asserted; commence when released
 	  	if (startCount == 0)
-		  ProgCrt <= 'd1; // first program starts at 1
+		  ProgCtr <= 'd1; // first program starts at 1
 		else if (startCount == 1)
-		  ProgCrt <= 'd2; // second program starts at 2
+		  ProgCtr <= 'd2; // second program starts at 2
 		else if (startCount == 2)
-		  ProgCrt <= 'd3; // second program starts at 3
+		  ProgCtr <= 'd4; // third program starts at 4
 		else
-		  ProgCrt <= 0
+		  ProgCtr <= 'd0;
 		startCount <= startCount + 1;
 	end
+	if (ProgCtr == 0 && Start == 0)
+		ProgCtr <= ProgCtr; // stall
+  end
 endmodule
 

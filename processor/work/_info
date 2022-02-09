@@ -1,0 +1,89 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/20.1
+vInstROM
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1644388451
+!i10b 1
+!s100 GHBE2>ETEcPPWaIJl>hTW2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+II8Y`N]18^QBKBQ4KXZ2Tm0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor
+w1644384558
+8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
+FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
+!i122 14
+L0 3 14
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1644388451.000000
+!s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+n@inst@r@o@m
+vInstructionFetch_tb
+R0
+R1
+!i10b 1
+!s100 [JIhXAT6:J?f68gS9TcXm2
+R2
+IT?;g]1Yz^l:376YzhnG2`1
+R3
+S1
+R4
+w1644387753
+8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv
+FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv
+!i122 15
+L0 6 93
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv|
+!i113 1
+R7
+R8
+n@instruction@fetch_tb
+vProgCtr
+R0
+R1
+!i10b 1
+!s100 oik>d]z1dgP4_g1eTc3Je3
+R2
+IjR7lAm^<cobM2ThdYe[_J0
+R3
+S1
+R4
+w1644388404
+8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv
+FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv
+!i122 16
+L0 2 41
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv|
+!i113 1
+R7
+R8
+n@prog@ctr

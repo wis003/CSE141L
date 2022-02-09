@@ -1,0 +1,61 @@
+# Compile of InstROM.sv was successful.
+# Compile of InstructionFetch_tb.sv was successful.
+# Compile of ProgCtr.sv failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of InstROM.sv was successful.
+# Compile of InstructionFetch_tb.sv was successful.
+# Compile of ProgCtr.sv failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of InstROM.sv was successful.
+# Compile of InstructionFetch_tb.sv was successful.
+# Compile of ProgCtr.sv failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of InstROM.sv was successful.
+# Compile of InstructionFetch_tb.sv was successful.
+# Compile of ProgCtr.sv failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of InstROM.sv was successful.
+# Compile of InstructionFetch_tb.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.InstructionFetch_tb
+# vsim -gui work.InstructionFetch_tb 
+# Start time: 22:17:04 on Feb 08,2022
+# Loading sv_std.std
+# Loading work.InstructionFetch_tb
+# Loading work.ProgCtr
+# Loading work.InstROM
+add wave -position insertpoint sim:/InstructionFetch_tb/*
+run -all
+# Check Reset
+# Check nothing happens before Start
+# ** Error: Assertion error.
+#    Time: 4 ns  Scope: InstructionFetch_tb File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstructionFetch_tb.sv Line: 58
+# Check first program was loaded
+# Check second program was loaded
+# Check third program was loaded
+# Compile of InstROM.sv was successful.
+# Compile of InstructionFetch_tb.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of InstROM.sv was successful.
+# Compile of InstructionFetch_tb.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# 3 compiles, 0 failed with no errors.
+quit -sim
+# End time: 22:34:19 on Feb 08,2022, Elapsed time: 0:17:15
+# Errors: 1, Warnings: 11
+vsim -gui work.InstructionFetch_tb
+# vsim -gui work.InstructionFetch_tb 
+# Start time: 22:34:25 on Feb 08,2022
+# Loading sv_std.std
+# Loading work.InstructionFetch_tb
+# Loading work.ProgCtr
+# Loading work.InstROM
+add wave -position insertpoint sim:/InstructionFetch_tb/*
+run -all
+# Check Reset
+# Check nothing happens before Start
+# Check first program was loaded
+# Check second program was loaded
+# Check third program was loaded

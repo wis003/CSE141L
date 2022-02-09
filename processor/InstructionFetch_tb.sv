@@ -91,7 +91,7 @@ initial begin
     #1 Clk = '0;
 
     $display("Check third program was loaded");
-    assert (InstOut == 9'b110001000);
+    assert (InstOut == 9'b111111111);
 
 end
 
