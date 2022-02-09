@@ -27,11 +27,11 @@ module ProgCtr #(parameter L=10) (
 		startCount <= '0;
 	end else if (Start)	begin				   // hold while start asserted; commence when released
 	  	if (startCount == 0)
-		  ProgCrt <= 'd50; // first program at 50
+		  ProgCrt <= 'd1; // first program starts at 1
 		else if (startCount == 1)
-		  ProgCrt <= 'd150; // second program at 150
+		  ProgCrt <= 'd2; // second program starts at 2
 		else if (startCount == 2)
-		  ProgCrt <= 'd250; // second program at 250
+		  ProgCrt <= 'd3; // second program starts at 3
 		else
 		  ProgCrt <= 0
 		startCount <= startCount + 1;

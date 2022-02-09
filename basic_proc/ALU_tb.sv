@@ -1,6 +1,8 @@
+// TEST BENCH
+// ALU
+
 `timescale 1ns/ 1ps
 
-// ALU test bench
 module ALU_tb;
   logic [ 7:0] INPUTA;        // data inputs
   logic [ 7:0] INPUTB;

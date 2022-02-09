@@ -1,8 +1,4 @@
-// Create Date:    2019.01.25
-// Design Name:    CSE141L
-// Module Name:    reg_file 
-//
-// Additional Comments: 					  $clog2
+// RegFile
 
 /* parameters are compile time directives 
        this can be an any-width, any-depth reg_file: just override the params!
