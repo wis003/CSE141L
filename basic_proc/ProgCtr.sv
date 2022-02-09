@@ -1,32 +1,40 @@
-// Design Name:    basic_proc
-// Module Name:    InstFetch 
-// Project Name:   CSE141L
-// Description:    instruction fetch (pgm ctr) for processor
-//
-// Revision:  2019.01.27
-//
+// Program Counter
 module ProgCtr #(parameter L=10) (
   input                Reset,      // reset, init, etc. -- force PC to 0
-                       Start,      // Signal to jump to next program; currently unused 
+                       Start,      // Signal to jump to next program 
                        Clk,        // PC can change on pos. edges only
                        BranchRel,  // jump to Target + PC
-					        BranchAbs,  // jump to Target
-							  ALU_flag,   // Sometimes you may require signals from other modules, can pass around flags if needed
-  input        [L-1:0] Target,     // jump ... "how high?"
+					   BranchAbs,  // jump to Target
+					   ALU_flag,   // Sometimes you may require signals from other modules, can pass around flags if needed
+  input        [L-1:0] Target,     // jump ... "how high?" (100 shooters - future)
   output logic [L-1:0] ProgCtr     // the program counter register itself
   );
   
-	 
+  logic [1:0] startCount;
+
   // program counter can clear to 0, increment, or jump
   always_ff @(posedge Clk)	           // or just always; always_ff is a linting construct
-	if(Reset)
-	  ProgCtr <= 0;				       // for first program; want different value for 2nd or 3rd
-	else if(BranchAbs)	               // unconditional absolute jump
+	if (BranchAbs)	               // unconditional absolute jump
 	  ProgCtr <= Target;			   //   how would you make it conditional and/or relative?
-	else if(BranchRel)   // conditional relative jump
+	else if (BranchRel)   			   // conditional relative jump
 	  ProgCtr <= Target + ProgCtr;	   //   how would you make it unconditional and/or absolute
 	else
-	  ProgCtr <= ProgCtr+'b1; 	       // default increment (no need for ARM/MIPS +4 -- why?)
+	  ProgCtr <= ProgCtr + 1; 	       // default increment (no need for ARM/MIPS +4 -- why?)
 
+	// override default behavior
+	if (Reset) begin
+		ProgCtr <= 0;
+		startCount <= '0;
+	end else if (Start)	begin				   // hold while start asserted; commence when released
+	  	if (startCount == 0)
+		  ProgCrt <= 'd50; // first program at 50
+		else if (startCount == 1)
+		  ProgCrt <= 'd150; // second program at 150
+		else if (startCount == 2)
+		  ProgCrt <= 'd250; // second program at 250
+		else
+		  ProgCrt <= 0
+		startCount <= startCount + 1;
+	end
 endmodule
 

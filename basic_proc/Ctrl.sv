@@ -4,14 +4,14 @@ import definitions::*;
 // inputs from instrROM, ALU flags
 // outputs to program_counter (fetch unit)
 module Ctrl (
-  input[ 8:0] Instruction,	   // machine code
+  input[ 8:0]  Instruction,	   // machine code
   output logic Jump     ,
                BranchEn ,
-	       RegWrEn  ,	   // write to reg_file (common)
-	       MemWrEn  ,	   // write to mem (store only)
-	       LoadInst	,	   // mem or ALU to reg_file ?
+               RegWrEn  ,	   // write to reg_file (common)
+               MemWrEn  ,	   // write to mem (store only)
+               LoadInst	,	   // mem or ALU to reg_file ?
       	       StoreInst,          // mem write enable
-	       Ack,		   // "done w/ program"
+	             Ack      ,		   // "done w/ program"
   output logic [1:0] TargSel       // Select signal for LUT
   );
 

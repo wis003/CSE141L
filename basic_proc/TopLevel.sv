@@ -4,7 +4,7 @@
 // CSE141L
 // partial only										   
 module TopLevel(		   // you will have the same 3 ports
-    input     Reset,	   // init/reset, active high
+    input     	 Reset,	   // init/reset, active high
 			     Start,    // start next program
 	             Clk,	   // clock -- posedge used inside design
     output logic Ack	   // done flag from DUT
@@ -18,10 +18,10 @@ wire [ 7:0] InA, InB, 	   // ALU operand inputs
             ALU_out;       // ALU result
 wire [ 7:0] RegWriteValue, // data in to reg file
             MemWriteValue, // data in to data_memory
-	    MemReadValue;  // data out from data_memory
+	    	MemReadValue;  // data out from data_memory
 wire        MemWrite,	   // data_memory write enable
-	    RegWrEn,	   // reg_file write enable
-	    Zero,          // ALU output = 0 flag
+			RegWrEn,	   // reg_file write enable
+			Zero,          // ALU output = 0 flag
             Jump,	   // to program counter: jump 
             BranchEn;	   // to program counter: branch enable
 wire [1:0]  TargSel;
@@ -39,7 +39,8 @@ logic[15:0] CycleCt;	   // standalone; NOT PC!
 	.ProgCtr      (PgmCtr  )	   // program count = index to instruction memory
 	);					  
 
-LUT LUT1(.Addr         (TargSel ) ,
+LUT LUT1(
+	.Addr         (TargSel ) ,
          .Target       (PCTarg  )
     );
 
