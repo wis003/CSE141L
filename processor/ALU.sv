@@ -22,6 +22,7 @@ module ALU #(parameter W=8, Ops=4) (
       LSH : Out = InputA << InputB;       // shift left
       RSH : Out = InputA >> InputB;       // shift right
       SEQ : Out = InputA == InputB;       // equals (8 bit output)
+      SNE : Out = InputA != InputB;
       SLT : Out = InputA < InputB;        // less than (8 bit output)
     endcase
   end

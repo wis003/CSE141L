@@ -67,6 +67,10 @@ module ALU_tb;
   test_alu_func;
   #5;
 
+  OP= 'd9;
+  test_alu_func;
+  #5;
+
   end
 
   task test_alu_func;
@@ -80,7 +84,8 @@ module ALU_tb;
         5 : expected = InputA << InputB;       // shift left
         6 : expected = InputA >> InputB;       // shift right
         7 : expected = InputA == InputB;       // equals
-        8 : expected = InputA < InputB;        // less than
+        8 : expected = InputA != InputB;       // not equals
+        9 : expected = InputA < InputB;        // less than
       endcase
 
       #1; if (expected == Out)

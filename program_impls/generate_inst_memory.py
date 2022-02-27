@@ -15,7 +15,8 @@ ops = {
 		'lw' : (0, '00010'),
 		'sw' : (0, '00011'),
 		'seq': (0, '00100'),
-		'slt': (0, '00101'),
+		'sne': (0, '00101'),
+		'slt': (0, '00110'),
 
 		#(01)
 		'set': (1, 0, '010'),
@@ -32,15 +33,15 @@ ops = {
 		'sright': (2, '10111'),
 
 		#(11)
-		'beq': (3, '110'),
-		'bne': (3, '111'),
+		'beq_abs': (3, '110'),
+		'beq_rel': (3, '111'),
 		}
 
 # This is a neat trick to catch programming errors
 # TOTAL_IMEM_SIZE = 2**10
 
 # Don't need to do anything fancy here
-with open('program1.S') as ifile, open('inst_mem.txt', 'w') as imem:
+with open('program1.S') as ifile, open('inst_memory.txt', 'w') as imem:
 	for lineno, line in enumerate(ifile):
 		try:
 			# Skip over blank lines, remove comments

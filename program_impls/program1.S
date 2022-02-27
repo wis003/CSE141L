@@ -214,8 +214,13 @@ put r3 r0                       // r4 = r0
 
 // branch logic
 set 0                           // r3 = 0
+and r1 r3                       // r1 = r1 & r3
 and r2 r3                       // r2 = r2 & r3
 set 15                          // r3 = 15
+add r1 r3                       // r1 = r1 + r3
+set 1                           // r3 = 1
 add r2 r3                       // r2 = r2 + r3
 set 4                           // r3 = 4
-bne r0 r2 r3                    // if (r0 != r2) PC = r3 (loop back to PC 5 if count != 15)
+sne r0 r1                       // r0 = (r0 != r1)
+beq_abs r0 r2 r3                // if (r0 == r2) PC = r3 (loop back to PC 4 if count != 15)
+halt

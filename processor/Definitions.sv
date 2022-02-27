@@ -12,11 +12,12 @@ package definitions;
 	const logic [3:0]kLSH  = 4'b0101;
 	const logic [3:0]kRSH  = 4'b0110;
     const logic [3:0]kSEQ  = 4'b0111;
-	const logic [3:0]kSLT  = 4'b1000;
+    const logic [3:0]kSNE  = 4'b1000;
+	const logic [3:0]kSLT  = 4'b1001;
 
     // enum names will appear in timing diagram
     typedef enum logic[3:0] {
         ADD, SUB, AND, OR, XOR, LSH,
-        RSH, SEQ, SLT } op_mne;
+        RSH, SEQ, SNE, SLT } op_mne;
    
 endpackage // definitions
