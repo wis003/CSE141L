@@ -10,7 +10,7 @@ module InstROM #(parameter A=10, W=9) (
 
   // Load instruction memory from external file
   initial begin
-      $readmemb("C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/program_impls/machine_code.txt", inst_rom);
+      $readmemb("C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/program_impls/inst_memory.txt", inst_rom);
   end 
   
 endmodule

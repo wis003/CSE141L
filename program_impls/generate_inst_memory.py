@@ -14,7 +14,8 @@ ops = {
 		'put': (0, '00001'),
 		'lw' : (0, '00010'),
 		'sw' : (0, '00011'),
-		'sgt': (0, '00100'),
+		'seq': (0, '00100'),
+		'slt': (0, '00101'),
 
 		#(01)
 		'set': (1, 0, '010'),
@@ -39,7 +40,7 @@ ops = {
 # TOTAL_IMEM_SIZE = 2**10
 
 # Don't need to do anything fancy here
-with open('program1.S') as ifile, open('inst_mem.binary', 'w') as imem:
+with open('program1.S') as ifile, open('inst_mem.txt', 'w') as imem:
 	for lineno, line in enumerate(ifile):
 		try:
 			# Skip over blank lines, remove comments

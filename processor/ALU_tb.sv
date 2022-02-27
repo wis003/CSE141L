@@ -67,14 +67,6 @@ module ALU_tb;
   test_alu_func;
   #5;
 
-  OP= 'd9;
-  test_alu_func;
-  #5;
-
-  OP= 'd10;
-  test_alu_func;
-  #5;
-
   end
 
   task test_alu_func;
@@ -83,14 +75,12 @@ module ALU_tb;
         0 : expected = InputA + InputB;        // add
         1 : expected = InputA - InputB;        // sub
         2 : expected = InputA & InputB;        // bitwise AND
-        3 : expected = ~(InputA | InputB);       // bitwise NOR
-        4 : expected = InputA ^ InputB;        // bitwise XOR
-        5 : expected = InputA >> InputB;       // shift left
-        6 : expected = InputA << InputB;       // shift right
+        3 : expected = InputA | InputB;        // bitwise OR
+        4 : expected = ^(InputB);              // reduction XOR
+        5 : expected = InputA << InputB;       // shift left
+        6 : expected = InputA >> InputB;       // shift right
         7 : expected = InputA == InputB;       // equals
-        8 : expected = InputA != InputB;       // not equals
-        9 : expected = InputA > InputB;        // greater than
-       10 : expected = InputA < InputB;        // less than
+        8 : expected = InputA < InputB;        // less than
       endcase
 
       #1; if (expected == Out)
