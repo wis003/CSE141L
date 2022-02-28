@@ -12,7 +12,6 @@ module Ctrl (
                LoadInst	,	   // mem or ALU to reg_file ?
       	       StoreInst,          // mem write enable
 	             Ack      ,		   // "done w/ program"
-  output logic [1:0] TargSel       // Select signal for LUT
   );
 
 assign MemWrEn = Instruction[8:6]==3'b110;	 //111  110
@@ -32,10 +31,6 @@ always_comb
 
 // branch every time instruction = 9'b?????1111;
 assign BranchEn = &Instruction[3:0];
-
-// route data memory --> reg_file for loads
-//   whenever instruction = 9'b110??????; 
-assign TargSel  = Instruction[3:2];
 
 assign Ack = &Instruction;
 

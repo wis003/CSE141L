@@ -33,8 +33,8 @@ ops = {
 		'sright': (2, '10111'),
 
 		#(11)
-		'beq_abs': (3, '110'),
-		'beq_rel': (3, '111'),
+		'b_up'	: (3, '110'),
+		'b_down': (3, '111'),
 		}
 
 # This is a neat trick to catch programming errors
