@@ -53,7 +53,7 @@ module TopLevel(		   // you will have the same 3 ports
 	);
 
 	// reg file
-	RegFile #(.W(8),.A(3)) RF1 (			  // A(3) makes this 2**3=8 elements deep
+	RegFile RF1 (
 		.Clk    				  ,
 		.Reset     (Reset),
 		.WriteEn   (RegWrEn)    , 

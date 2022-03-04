@@ -1,8 +1,8 @@
 // RegFile
 
-/* parameters are compile time directives 
-       this can be an any-width, any-depth reg_file: just override the params!
-*/
+// any-depth `reg_file`: just override the params!
+//   W = data path width          <-- [WI22 Requirement: max(W) = 8]
+//   A = address pointer width    <-- [WI22 Requirement: max(A) = 4]
 module RegFile #(parameter W=8, A=4)(		 // W = data path width (leave at 8); A = address pointer width
   input                Clk,
                        Reset,
@@ -12,40 +12,24 @@ module RegFile #(parameter W=8, A=4)(		 // W = data path width (leave at 8); A =
                        Waddr,
   input        [W-1:0] DataIn,
   output       [W-1:0] DataOutA,			 // showing two different ways to handle DataOutX, for
-  output logic [W-1:0] DataOutB				 //   pedagogic reasons only
+  output logic [W-1:0] DataOutB				 // pedagogic reasons only
     );
 
 // W bits wide [W-1:0] and 2**4 registers deep 	 
 logic [W-1:0] Registers[2**A];	             // or just registers[16] if we know A=4 always
 
 // combinational reads 
-/* can write always_comb in place of assign
-    difference: assign is limited to one line of code, so
-	always_comb is much more versatile     
-*/
-assign      DataOutA = Registers[RaddrA];	 // 
-always_comb DataOutB = Registers[RaddrB];    // can read from addr 0, just like ARM
+assign DataOutA = Registers[RaddrA];
+assign DataOutB = Registers[RaddrB];
 
 // sequential (clocked) writes 
 always_ff @ (posedge Clk) begin
+  integer i;
   if (Reset) begin
-    Registers[0] <= '0;
-    Registers[1] <= '0;
-    Registers[2] <= '0;
-    Registers[3] <= '0;
-    Registers[4] <= '0;
-    Registers[5] <= '0;
-    Registers[6] <= '0;
-    Registers[7] <= '0;
-    Registers[8] <= '0;
-    Registers[9] <= '0;
-    Registers[10] <= '0;
-    Registers[11] <= '0;
-    Registers[12] <= '0;
-    Registers[13] <= '0;
-    Registers[14] <= '0;
-    Registers[15] <= '0;
-  end else if (WriteEn) begin	                             // works just like data_memory writes
+    for (i = 0; i < 2**A; i = i + 1) begin
+      Registers[i] <= '0;
+    end
+  end else if (WriteEn) begin
     Registers[Waddr] <= DataIn;
   end
 end
