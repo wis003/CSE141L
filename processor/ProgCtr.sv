@@ -27,10 +27,10 @@ module ProgCtr #(parameter L=10) (
 	end else if (Start)	begin			// hold while start asserted; commence when released
 	  	if (startCount == 0)
 		  ProgCtr <= 'd0; 				// first program start hardcoded
-		// else if (startCount == 1)
-		//   ProgCtr <= 'd2; 				// second program start hardcoded
+		else if (startCount == 1)
+		  ProgCtr <= 'd189; 				// second program start hardcoded
 		// else if (startCount == 2)
-		//   ProgCtr <= 'd4; 				// third program start hardcoded
+		//   ProgCtr <= 'dXXX; 				// third program start hardcoded
 		else
 		  ProgCtr <= ProgCtr;
 		startCount <= startCount + 1;

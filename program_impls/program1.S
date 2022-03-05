@@ -83,10 +83,10 @@ set 1                           // r3 = 1
 sright r1 r3                    // r1 = r1 >> r3 (r1 = 0 b8:b2)
 set 54                          // r3 = 54 (mask = 0011_0110)
 and r1 r3                       // r1 = r1 & r3 (r1 = 0 0 b7 b6 0 b4 b3 0)
-set 5                           // r3 = 5
-get r2 r3                       // r2 = r5
+set 6                           // r3 = 6
+get r2 r3                       // r2 = r6
 set 1                           // r3 = 1
-and r2 r3                       // r2 = r2 & r3 (r2 = 0000000 b1)
+and r2 r3                       // r2 = r2 & r3 (r2 = 0 0 0 0 0 0 0 b1)
 or r0 r1                        // r0 = r0 | r1 (r0 = b11 b10 b7 b6 0 b4 b3 0)
 or r0 r2                        // r0 = r0 | r2 (r0 = b11 b10 b7 b6 0 b4 b3 b1)
 xor r1 r0                       // r1 = ^(r0)
