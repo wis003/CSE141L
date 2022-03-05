@@ -3,9 +3,10 @@ module DataMem #(parameter W=8, A=8)  (
   input                 Clk,
                         Reset,
                         WriteEn,
-  input       [A-1:0]   DataAddress,  // A-bit-wide pointer to 256-deep memory
-  input       [W-1:0]   DataIn,		    // W-bit-wide data path, also
-  output logic[W-1:0]   DataOut);
+  input        [A-1:0]   DataA, // $t in MEM[$t] = $s
+  input        [W-1:0]   DataB, // $s in both $t = MEM[$s] and MEM[$t] = $s
+  output logic [W-1:0]   DataOut
+  );
 
   logic [W-1:0] Core[2**A];			      // 8x256 two-dimensional array -- the memory itself
                    
@@ -14,11 +15,11 @@ module DataMem #(parameter W=8, A=8)  (
     $readmemh("C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/program_impls/data_mem/data_mem_00-initial.hex", Core);
   end
   
-  assign DataOut = Core[DataAddress]; // reads are combinational
+  assign DataOut = Core[DataB]; // reads are combinational
 
   always_ff @ (posedge Clk) begin		 // writes are sequential
     if (WriteEn)
-      Core[DataAddress] <= DataIn;
+      Core[DataA] <= DataB;
   end  
 
 endmodule

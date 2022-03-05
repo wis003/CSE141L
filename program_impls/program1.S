@@ -74,14 +74,15 @@ put r3 r1                       // r9 = r1 (p4 stored in r9)
 
 // p2 calculation
 set 12                          // r3 = 12 (mask = 0000_1100)
-and r1 r3                       // r1 = r1 & r3 (r1 = 000000 b11 b10)
+and r0 r3                       // r0 = r0 & r3 (r0 = 0 0 0 0 b11 b10 0 0)
+set 4                           // r3 = 4
+sleft r0 r3                     // r0 = r0 << r3 (r0 = b11 b10 0 0 0 0 0 0)
 set 6                           // r3 = 6
-sleft r1 r3                     // r1 = r1 << r3 (r1 = b11 b10 000000)
-get r0 r3                       // r0 = r6
+get r1 r3                       // r1 = r6
 set 1                           // r3 = 1
-sright r0 r3                    // r0 = r0 >> r3 (r0 = 0 b8:b2)
-set 48                          // r3 = 48 (mask = 0011_0110)
-and r0 r3                       // r0 = r0 & r3 (r0 = 0 0 b7 b6 0 b4 b3 0)
+sright r1 r3                    // r1 = r1 >> r3 (r1 = 0 b8:b2)
+set 54                          // r3 = 54 (mask = 0011_0110)
+and r1 r3                       // r1 = r1 & r3 (r1 = 0 0 b7 b6 0 b4 b3 0)
 set 5                           // r3 = 5
 get r2 r3                       // r2 = r5
 set 1                           // r3 = 1
@@ -204,28 +205,4 @@ set 8                           // r3 = 8
 get r1 r3                       // r1 = r8 (get output LSW)
 sw r0 r1                        // MEM[r0] = r1 (store output LSW in MEM[index + 30])
 
-// increment logic
-set 4                           // r3 = 4 (increment counter in r4)
-get r0 r3                       // r0 = r4
-set 1                           // r3 = 1
-add r0 r3                       // r0 += r3
-set 4                           // r3 = 4
-put r3 r0                       // r4 = r0
-
-// branch logic
-set 0                           // r3 = 0
-and r1 r3                       // r1 = r1 & r3
-and r2 r3                       // r2 = r2 & r3
-set 15                          // r3 = 15
-add r1 r3                       // r1 = r1 + r3
-set 1                           // r3 = 1
-add r2 r3                       // r2 = r2 + r3
-sne r0 r1                       // r0 = (r0 != r1)
-set 0                           // r3 = 0
-and r1 r3                       // r1 = r1 & r3
-set 44                          // r3 = 44
-add r1 r3                       // r1 = r1 + r3
-set 2                           // r3 = 2
-sleft r1 r3                     // r1 = r1 << r3 (r1 = 176)
-b_up r0 r2 r1                   // if (r0 == r2) PC = PC - r1 (loop back to PC 4 if count != 15)
 halt

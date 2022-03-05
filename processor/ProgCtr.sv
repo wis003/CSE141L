@@ -32,11 +32,47 @@ module ProgCtr #(parameter L=10) (
 		// else if (startCount == 2)
 		//   ProgCtr <= 'd4; 				// third program start hardcoded
 		else
-		  ProgCtr <= 'd0;
+		  ProgCtr <= ProgCtr;
 		startCount <= startCount + 1;
 	end
-	if (ProgCtr == 0 && Start == 0)
-		ProgCtr <= ProgCtr; // stall
+	if (startCount == 0)
+		ProgCtr <= ProgCtr; // stall before first start
+
+	/****************
+	FROM STARTER CODE
+	****************/
+	// // Note about Start:
+	// //
+	// // If your programs are spread out, with a gap in your machine code listing,
+	// // you will want to make Start cause an appropriate jump.
+	// //
+	// // If your programs are packed sequentially, such that program 2 begins right
+	// // after Program 1 ends, then you won't need to do anything special here.
+
+	// // Handle the Start signal by overriding normal behavior
+	// if (Reset) begin
+	// 	StartCount <= '0;
+	// 	start_r <= '0;
+	// end else begin
+	// 	start_r <= Start;
+	// 	// Detect rising edge of Start
+	// 	if ((start_r == '0) && (Start == '1)) begin
+	// 	StartCount <= StartCount + 1'b1;
+	// 	end
+	// 	// Detect falling edge of Start
+	// 	if ((start_r == '1) && (Start == '0)) begin
+	// 	case (StartCount)
+	// 		1: ProgCtr <= 'd000;
+	// 		2: ProgCtr <= 'd100;
+	// 		3: ProgCtr <= 'd200;
+	// 		default: ProgCtr <= ProgCtr;
+	// 	endcase
+	// 	end
+	// 	// And generally, don't let things go anywhere until first Start
+	// 	if (StartCount == '0)
+	// 	ProgCtr <= ProgCtr;
+	// end
+	
   end
 endmodule
 

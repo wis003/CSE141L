@@ -33,7 +33,7 @@ module TopLevel(		   // you will have the same 3 ports
 	// instruction ROM -- holds the machine code pointed to by program counter
 	InstROM #(.W(9)) IR1(
 		.InstAddress (ProgCtr    ), 
-		.InstOut     (Instruction)
+		.InstOut (Instruction)
 	);
 
 	// Decode stage = Control Decoder + Reg_file
@@ -54,19 +54,19 @@ module TopLevel(		   // you will have the same 3 ports
 	);
 
 	ALU ALU1 (
-		.InputA  (DataOutA),
-		.InputB  (DataOutB),
-		.OP      (ALUInst),
-		.Out     (ALU_Out)
+		.InputA (DataOutA),
+		.InputB (DataOutB),
+		.OP (ALUInst),
+		.Out (ALU_Out)
 	);
 
 	DataMem DM1 (
 		.Clk,
 		.Reset,
-		.WriteEn      (MemWrite),
-		.DataAddress  (DataOutB), 
-		.DataIn       (DataOutB), 
-		.DataOut      (MemReadValue)
+		.WriteEn (MemWrite),
+		.DataA (DataOutA), 
+		.DataB (DataOutB), 
+		.DataOut (MemReadValue)
 	);
 		
 	/* count number of instructions executed
