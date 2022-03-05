@@ -5,13 +5,13 @@ import definitions::*;
 module CtrlReg #(parameter W=8, A=4)(
   input                Clk,
                      Reset,
-  input[W:0]   Instruction,	 // machine code
-  input[W-1:0] ALUData  ,    // data to store from ALU
-  input[W-1:0] MemData  ,    // data to store from mem
+  input[W:0]   Instruction,   // machine code
+  input[W-1:0] ALUData  ,     // data to store from ALU
+  input[W-1:0] MemData  ,     // data to store from mem
   output logic BranchUp   ,  	// branch up enable
 		           BranchDown ,  	// branch down enable
-               MemWrite   ,	   // write to mem
-	             Ack        ,		   // done logic
+               MemWrite   ,	  // write to mem
+	             Ack        ,   // done logic
   output  [W-1:0] DataOutA,
                   DataOutB,
                   PCTarget,
@@ -25,10 +25,11 @@ module CtrlReg #(parameter W=8, A=4)(
 
   always_comb begin
 
+    // defaults
+    BranchUp, BranchDown, MemWrite, WriteEn = 0;
     DataIn = ALUData;
-    WriteEn = 0;
-    MemWrite = 0;
-
+    Ack = &Instruction; // reserve instruction = 9'b111111111 for Ack
+    
     case (Instruction[8:7])							  
       2'b00 : begin // Memory and Comparison
         case (Instruction[6:4])
@@ -39,8 +40,8 @@ module CtrlReg #(parameter W=8, A=4)(
           Waddr = Instruction[3:2];
 
           3'b000 : begin // get
-            DataIn = Registers[Registers[Instruction[3:2]]]; // DataIn here is essentially pointer to pointer
-            Waddr = Instruction[1:0];
+            DataIn = Registers[Registers[Instruction[1:0]]]; // DataIn here is essentially pointer to pointer
+            Waddr = Instruction[3:2];
           end
           3'b001 : begin // put
             DataIn = Registers[Instruction[1:0]];
@@ -51,6 +52,7 @@ module CtrlReg #(parameter W=8, A=4)(
           end
           3'b011 : begin // sw
             MemWrite = 1;
+            WriteEn = 0;
           end
           3'b100 : begin // seq
             ALUInst = SEQ;
@@ -65,15 +67,15 @@ module CtrlReg #(parameter W=8, A=4)(
       end
 
       2'b01 : begin // 1 Variable
-        if (Instruction[6]) begin
-          DataIn = Instruction[5:0];
-          WriteEn = 1;
-          Waddr = 3;
-        end
-        else begin
+        if (Instruction[6]) begin // not
           DataIn = ~Registers[Instruction[5:4]];
           WriteEn = 1;
           Waddr = Instruction[5:4];
+        end
+        else begin // set
+          DataIn = Instruction[5:0];
+          WriteEn = 1;
+          Waddr = 3;
         end
       end
 
@@ -86,26 +88,20 @@ module CtrlReg #(parameter W=8, A=4)(
       end
 
       2'b11 : begin // Branch
-        if (Instruction[6]) begin
+        if (Instruction[6]) begin // b_down
           if (Registers[Instruction[5:4]] == Registers[Instruction[3:2]]) begin
             PCTarget = Registers[Instruction[1:0]];
-            BranchUp = 0;
             BranchDown = 1;
           end
         end
-        else begin
+        else begin // b_up
           if (Registers[Instruction[5:4]] == Registers[Instruction[3:2]) begin
             PCTarget = Registers[Instruction[1:0]];
             BranchUp = 1;
-            BranchDown = 0;
           end
         end
       end
     endcase
-
-    // reserve instruction = 9'b111111111; for Ack
-    Ack = &Instruction;
-
   end
 
   // sequential (clocked) writes 
