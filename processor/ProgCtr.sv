@@ -5,7 +5,7 @@ module ProgCtr #(parameter L=10) (
                        Clk,        	// PC can change on pos. edges only
                        BranchUp,  	// jump to PC - PCTarget
 					   BranchDown, 	// jump to PC + PCTarget
-  input        [L-1:0] PCTarget,    // jump ... "how high?" (100 shooters - future)
+  input        [7:0] PCTarget,    // jump ... "how high?" (100 shooters - future)
   output logic [L-1:0] ProgCtr     	// the program counter register itself
   );
   

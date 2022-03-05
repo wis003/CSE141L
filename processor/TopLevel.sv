@@ -6,8 +6,8 @@ module TopLevel(		   // you will have the same 3 ports
     output logic Ack	   // done flag from DUT
     );
 
-	wire [9:0] 	 ProgCtr,       // program counter
-			   	 PCTarget;
+	wire [9:0] 	 ProgCtr;       // program counter
+	wire [7:0]	 PCTarget;
 	wire [8:0] 	 Instruction;   // our 9-bit opcode
 	wire [7:0] 	 ReadA, ReadB;  // reg_file outputs
 	wire [7:0] 	 InA, InB, 	   	// ALU operand inputs
@@ -43,8 +43,8 @@ module TopLevel(		   // you will have the same 3 ports
 	// Control decoder
 	Ctrl Ctrl1 (
 		.Instruction  (Instruction) ,  // from instr_ROM
-		.Jump         (Jump       ) ,  // to PC to handle jump/branch instructions
-		.BranchEn     (BranchEn   )	,  // to PC
+		.BranchUp,  	// branch up enable
+		.BranchDown,  	// branch down enable
 		.RegWrEn      (RegWrEn    )	,  // register file write enable
 		.MemWrEn      (MemWrite   ) ,  // data memory write enable
 		.LoadInst     (LoadInst   ) ,  // selects memory vs ALU output as data input to reg_file

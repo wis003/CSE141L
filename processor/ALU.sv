@@ -12,7 +12,7 @@ module ALU #(parameter W=8, Ops=4) (
 	
   always_comb begin
     Out = 0;                              // No Op = default
-    case(OP)							  
+    case (OP)							  
       ADD : Out = InputA + InputB;        // add
       SUB : Out = InputA + (~InputB) + 1; // sub
       AND : Out = InputA & InputB;        // bitwise AND
