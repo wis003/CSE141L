@@ -371,3 +371,112 @@ run -all
 # ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
 #    Time: 1695 ns  Iteration: 0  Instance: /FinalSubmission_tb
 # Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+quit -sim
+# End time: 23:52:58 on Mar 04,2022, Elapsed time: 0:40:53
+# Errors: 0, Warnings: 1
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 23:53:12 on Mar 04,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+add wave -position insertpoint sim:/FinalSubmission_tb/DUT/*
+run -all
+# *** P1 Start
+#     DM[         30] - Good.
+#     DM[         31] - Good.
+# !!! DM[         32] - WRONG. Expected 0x35  Got 0xb6
+# !!! DM[         33] - WRONG. Expected 0x90  Got 0x04
+# !!! DM[         34] - WRONG. Expected 0xde  Got 0x82
+# !!! DM[         35] - WRONG. Expected 0xde  Got 0x1b
+# !!! DM[         36] - WRONG. Expected 0x0a  Got 0x9c
+# !!! DM[         37] - WRONG. Expected 0x5f  Got 0xc1
+# !!! DM[         38] - WRONG. Expected 0xa9  Got 0x07
+# !!! DM[         39] - WRONG. Expected 0x0c  Got 0xa6
+# !!! DM[         40] - WRONG. Expected 0x8b  Got 0xad
+# !!! DM[         41] - WRONG. Expected 0xde  Got 0x9e
+# !!! DM[         42] - WRONG. Expected 0x7b  Got 0x19
+# !!! DM[         43] - WRONG. Expected 0xb8  Got 0x6a
+# !!! DM[         44] - WRONG. Expected 0x18  Got 0x29
+# !!! DM[         45] - WRONG. Expected 0x81  Got 0xa8
+# !!! DM[         46] - WRONG. Expected 0x82  Got 0x3d
+# !!! DM[         47] - WRONG. Expected 0xb1  Got 0x21
+# !!! DM[         48] - WRONG. Expected 0x47  Got 0x41
+# !!! DM[         49] - WRONG. Expected 0x47  Got 0x96
+# !!! DM[         50] - WRONG. Expected 0xf9  Got 0xd1
+# !!! DM[         51] - WRONG. Expected 0x60  Got 0xae
+# !!! DM[         52] - WRONG. Expected 0xdb  Got 0x77
+# !!! DM[         53] - WRONG. Expected 0x81  Got 0x0d
+# !!! DM[         54] - WRONG. Expected 0x28  Got 0x5d
+# !!! DM[         55] - WRONG. Expected 0xd8  Got 0xbb
+# !!! DM[         56] - WRONG. Expected 0x81  Got 0x9a
+# !!! DM[         57] - WRONG. Expected 0xdb  Got 0x96
+# !!! DM[         58] - WRONG. Expected 0x0f  Got 0xc1
+# !!! DM[         59] - WRONG. Expected 0x0f  Got 0xd7
+# last instruction =  166
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 1695 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+quit -sim
+# End time: 23:55:53 on Mar 04,2022, Elapsed time: 0:02:41
+# Errors: 0, Warnings: 1
+# Load canceled
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 00:03:31 on Mar 05,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+add wave -position insertpoint sim:/FinalSubmission_tb/DUT/*
+run -all
+# *** P1 Start
+#     DM[         30] - Good.
+#     DM[         31] - Good.
+#     DM[         32] - Good.
+#     DM[         33] - Good.
+# !!! DM[         34] - WRONG. Expected 0xde  Got 0xd8
+#     DM[         35] - Good.
+# !!! DM[         36] - WRONG. Expected 0x0a  Got 0x0c
+#     DM[         37] - Good.
+# !!! DM[         38] - WRONG. Expected 0xa9  Got 0xaf
+#     DM[         39] - Good.
+# !!! DM[         40] - WRONG. Expected 0x8b  Got 0x8d
+#     DM[         41] - Good.
+#     DM[         42] - Good.
+#     DM[         43] - Good.
+# !!! DM[         44] - WRONG. Expected 0x18  Got 0x1e
+#     DM[         45] - Good.
+# !!! DM[         46] - WRONG. Expected 0x82  Got 0x84
+#     DM[         47] - Good.
+#     DM[         48] - Good.
+#     DM[         49] - Good.
+#     DM[         50] - Good.
+#     DM[         51] - Good.
+# !!! DM[         52] - WRONG. Expected 0xdb  Got 0xdd
+#     DM[         53] - Good.
+# !!! DM[         54] - WRONG. Expected 0x28  Got 0x2e
+#     DM[         55] - Good.
+#     DM[         56] - Good.
+#     DM[         57] - Good.
+# !!! DM[         58] - WRONG. Expected 0x0f  Got 0x09
+#     DM[         59] - Good.
+# last instruction =  189
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
