@@ -12,7 +12,7 @@ module TopLevel(		   // you will have the same 3 ports
 	wire [7:0] 	DataOutA, DataOutB;
 	wire [7:0] 	ALU_Out;       // ALU result
 	wire [7:0] 	MemReadValue;  // data out from data_memory
-	wire [3:0]	ALUInst
+	wire [3:0]	ALUInst;
 	wire       	MemWrite,	   	// data_memory write enable
 			   	BranchUp,	   	// program counter branch up 
 			 	BranchDown;	// program counter branch down

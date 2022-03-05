@@ -5,17 +5,17 @@ import definitions::*;
 module CtrlReg #(parameter W=8, A=4)(
   input                Clk,
                      Reset,
-  input[W:0]   Instruction,   // machine code
-  input[W-1:0] ALUData  ,     // data to store from ALU
-  input[W-1:0] MemData  ,     // data to store from mem
-  output logic BranchUp   ,  	// branch up enable
-		           BranchDown ,  	// branch down enable
-               MemWrite   ,	  // write to mem
-	             Ack        ,   // done logic
-  output  [W-1:0] DataOutA,
-                  DataOutB,
-                  PCTarget,
-  output  [A-1:0] ALUInst
+  input [W:0]   Instruction,      // machine code
+  input [W-1:0] ALUData,          // data to store from ALU
+  input [W-1:0] MemData,          // data to store from mem
+  output logic BranchUp,  	      // branch up enable
+		           BranchDown,  	    // branch down enable
+               MemWrite,	        // write to mem
+	             Ack,               // done logic
+  output logic [W-1:0] DataOutA,
+                       DataOutB,
+                       PCTarget,
+  output logic [A-1:0] ALUInst
   );
  	 
   logic [W-1:0] Registers[2**A]; // W bits wide [W-1:0] and 2**4 registers deep
@@ -26,19 +26,22 @@ module CtrlReg #(parameter W=8, A=4)(
   always_comb begin
 
     // defaults
-    BranchUp, BranchDown, MemWrite, WriteEn = 0;
+    BranchUp = 0;
+    BranchDown = 0;
+    MemWrite = 0;
+    WriteEn = 0;
     DataIn = ALUData;
     Ack = &Instruction; // reserve instruction = 9'b111111111 for Ack
     
     case (Instruction[8:7])							  
       2'b00 : begin // Memory and Comparison
+
+        DataOutA = Registers[Instruction[3:2]];
+        DataOutB = Registers[Instruction[1:0]];
+        WriteEn = 1;
+        Waddr = Instruction[3:2];
+
         case (Instruction[6:4])
-
-          DataOutA = Registers[Instruction[3:2]];
-          DataOutB = Registers[Instruction[1:0]];
-          WriteEn = 1;
-          Waddr = Instruction[3:2];
-
           3'b000 : begin // get
             DataIn = Registers[Registers[Instruction[1:0]]]; // DataIn here is essentially pointer to pointer
             Waddr = Instruction[3:2];
@@ -95,7 +98,7 @@ module CtrlReg #(parameter W=8, A=4)(
           end
         end
         else begin // b_up
-          if (Registers[Instruction[5:4]] == Registers[Instruction[3:2]) begin
+          if (Registers[Instruction[5:4]] == Registers[Instruction[3:2]]) begin
             PCTarget = Registers[Instruction[1:0]];
             BranchUp = 1;
           end
