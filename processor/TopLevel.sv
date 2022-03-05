@@ -40,41 +40,10 @@ module TopLevel(		   // you will have the same 3 ports
 	);
 
 	// Decode stage = Control Decoder + Reg_file
-	// Control decoder
-	Ctrl Ctrl1 (
-		.Instruction  (Instruction) ,  // from instr_ROM
-		.BranchUp,  	// branch up enable
-		.BranchDown,  	// branch down enable
-		.RegWrEn      (RegWrEn    )	,  // register file write enable
-		.MemWrEn      (MemWrite   ) ,  // data memory write enable
-		.LoadInst     (LoadInst   ) ,  // selects memory vs ALU output as data input to reg_file
-		.StoreInst    (StoreInst  ) ,
-		.Ack          (Ack        )	   // "done" flag
-	);
-
-	// reg file
-	RegFile RF1 (
-		.Clk    				  ,
-		.Reset     (Reset),
-		.WriteEn   (RegWrEn)    , 
-		.RaddrA    (Instruction[5:3]),        //concatenate with 0 to give us 4 bits
-		.RaddrB    (Instruction[2:0]), 
-		.Waddr     (Instruction[5:3]), 	      // mux above
-		.DataIn    (RegWriteValue) , 
-		.DataOutA  (ReadA        ) , 
-		.DataOutB  (ReadB		 )
-	);
-
-	/* one pointer, two adjacent read accesses: 
-	(sample optional approach)
-		.raddrA ({Instruction[5:3],1'b0});
-		.raddrB ({Instruction[5:3],1'b1});
-	*/
+	CtrlReg CtrlReg1 ();
 
 	assign InA = ReadA;						  // connect RF out to ALU in
 	assign InB = ReadB;	          			  // interject switch/mux if needed/desired
-	// controlled by Ctrl1 -- must be high for load from data_mem; otherwise usually low
-	assign RegWriteValue = LoadInst ? MemReadValue : ALU_Out;  // 2:1 switch into reg_file
 
 	ALU ALU1 (
 		.InputA  (InA),
@@ -88,7 +57,7 @@ module TopLevel(		   // you will have the same 3 ports
 		.Reset,
 		.WriteEn      (MemWrite),
 		.DataAddress  (ReadB), 
-		.DataIn       (ReadA), 
+		.DataIn       (ReadB), 
 		.DataOut      (MemReadValue)
 	);
 		

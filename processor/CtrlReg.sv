@@ -1,20 +1,17 @@
-// CSE141L
 import definitions::*;
-// control decoder and register (combinational, not clocked)
-// inputs from instrROM, ALU flags
-// outputs to program_counter (fetch unit)
-module Ctrl #(parameter W=8, A=4)(
+
+// control decoder + register
+// module talks between instROM, ALU, DataMem, and ProgCtr
+module CtrlReg #(parameter W=8, A=4)(
   input                Clk,
                      Reset,
   input[W:0]   Instruction,	 // machine code
-  input[W-1:0] DataStore  ,
+  input[W-1:0] ALUData  ,    // data to store from ALU
+  input[W-1:0] MemData  ,    // data to store from mem
   output logic BranchUp   ,  	// branch up enable
 		           BranchDown ,  	// branch down enable
-              //  RegWrEn    ,	   // write to reg_file (common)
-              //  MemWrEn    ,	   // write to mem (store only)
-              //  LoadInst	  ,	   // mem or ALU to reg_file ?
-      	      //  StoreInst  ,          // mem write enable
-	             Ack        ,		   // "done w/ program"
+               MemWrite   ,	   // write to mem
+	             Ack        ,		   // done logic
   output  [W-1:0] DataOutA,
                   DataOutB,
                   PCTarget,
@@ -28,44 +25,41 @@ module Ctrl #(parameter W=8, A=4)(
 
   always_comb begin
 
-    DataIn = DataStore;
+    DataIn = ALUData;
     WriteEn = 0;
+    MemWrite = 0;
 
     case (Instruction[8:7])							  
       2'b00 : begin // Memory and Comparison
         case (Instruction[6:4])
+
+          DataOutA = Registers[Instruction[3:2]];
+          DataOutB = Registers[Instruction[1:0]];
+          WriteEn = 1;
+          Waddr = Instruction[3:2];
+
           3'b000 : begin // get
-          
+            DataIn = Registers[Registers[Instruction[3:2]]]; // DataIn here is essentially pointer to pointer
+            Waddr = Instruction[1:0];
           end
           3'b001 : begin // put
-          
+            DataIn = Registers[Instruction[1:0]];
+            Waddr = Registers[Instruction[3:2]]; // Waddr here is essentially pointer to pointer
           end
           3'b010 : begin // lw
-          
+            DataIn = MemData;
           end
           3'b011 : begin // sw
-          
+            MemWrite = 1;
           end
           3'b100 : begin // seq
-            DataOutA = Registers[Instruction[3:2]];
-            DataOutB = Registers[Instruction[1:0]];
             ALUInst = SEQ;
-            WriteEn = 1;
-            Waddr = Instruction[3:2];
           end
           3'b101 : begin // sne
-            DataOutA = Registers[Instruction[3:2]];
-            DataOutB = Registers[Instruction[1:0]];
             ALUInst = SNE;
-            WriteEn = 1;
-            Waddr = Instruction[3:2];
           end
           3'b110 : begin // slt
-            DataOutA = Registers[Instruction[3:2]];
-            DataOutB = Registers[Instruction[1:0]];
             ALUInst = SLT;
-            WriteEn = 1;
-            Waddr = Instruction[3:2];
           end
         endcase
       end
