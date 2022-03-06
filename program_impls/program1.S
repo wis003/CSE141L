@@ -27,7 +27,7 @@ and r0 r3                       // r0 = 0
 set 4                           // r3 = 4
 put r3 r0                       // r4 = r0 (loop counter stored in r4)
 
-// get MEM[index] and MEM[index + 1]
+// get MEM[2*counter] and MEM[2*counter + 1]
 set 4                           // r3 = 4 (PROGRAM 1 LOOP STARTS HERE)
 get r0 r3                       // r0 = r4 (get counter)
 set 1                           // r3 = 1
@@ -35,12 +35,12 @@ sleft r0 r3                     // r0 = r0 << r3 (index = counter * 2)
 add r0 r3                       // r0 += r3
 lw r1 r0                        // r1 = MEM[r0]
 set 5                           // r3 = 5
-put r3 r1                       // r5 = r1 (MEM[index + 1] stored in r5) (input MSW)
+put r3 r1                       // r5 = r1 (MEM[2*counter + 1] stored in r5) (input MSW)
 set 1                           // r3 = 1
 sub r0 r3                       // r0 -= r3
 lw r1 r0                        // r1 = MEM[r0]
 set 6                           // r3 = 6
-put r3 r1                       // r6 = r1 (MEM[index] stored in r6) (input LSW)
+put r3 r1                       // r6 = r1 (MEM[2*counter] stored in r6) (input LSW)
 
 // output MSW calculation
 set 5                           // r3 = 5 (BEGIN output MSW logic)
@@ -189,7 +189,7 @@ or r0 r1                        // r0 = r0 | r1 (r0 = b4 b3 b2 p4 b1 p2 p1 p16)
 set 8                           // r3 = 8
 put r3 r0                       // r8 = r0 (output LSW stored in r8)
 
-// place output (MEM[index + 30] and MEM[index + 31])
+// place output (MEM[2*counter + 30] and MEM[2*counter + 31])
 set 4                           // r3 = 4
 get r0 r3                       // r0 = r4 (get counter)
 set 1                           // r3 = 1
@@ -198,12 +198,12 @@ set 31                          // r3 = 31
 add r0 r3                       // r0 += r3
 set 7                           // r3 = 7
 get r1 r3                       // r1 = r7 (get output MSW)
-sw r0 r1                        // MEM[r0] = r1 (store output MSW in MEM[index + 31])
+sw r0 r1                        // MEM[r0] = r1 (store output MSW in MEM[2*counter + 31])
 set 1                           // r3 = 1
 sub r0 r3                       // r0 -= r3
 set 8                           // r3 = 8
 get r1 r3                       // r1 = r8 (get output LSW)
-sw r0 r1                        // MEM[r0] = r1 (store output LSW in MEM[index + 30])
+sw r0 r1                        // MEM[r0] = r1 (store output LSW in MEM[2*counter + 30])
 
 // increment logic
 set 4                           // r3 = 4 (increment counter in r4)
