@@ -718,8 +718,8 @@ set 12
 sne r0 r3                       // r0 = (casenum != 12)
 set 0
 and r2 r3
-set 15
-add r2 r3                       // jump = 15
+set 7
+add r2 r3                       // jump = 7
 set 1
 b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO place output)
 set 8                           // else
