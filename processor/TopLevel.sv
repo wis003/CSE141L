@@ -32,7 +32,7 @@ module TopLevel(		   // you will have the same 3 ports
 
 	// instruction ROM -- holds the machine code pointed to by program counter
 	InstROM #(.W(9)) IR1(
-		.InstAddress (ProgCtr    ), 
+		.InstAddress (ProgCtr), 
 		.InstOut (Instruction)
 	);
 

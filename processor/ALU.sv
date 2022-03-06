@@ -20,6 +20,7 @@ module ALU #(parameter W=8, Ops=4) (
       XOR : Out = ^(InputB);              // reduction XOR (8 bit output)
       LSH : Out = InputA << InputB;       // shift left
       RSH : Out = InputA >> InputB;       // shift right
+      BXOR: Out = InputA ^ InputB;        // bitwise XOR
       SEQ : Out = InputA == InputB;       // equals (8 bit output)
       SNE : Out = InputA != InputB;
       SLT : Out = InputA < InputB;        // less than (8 bit output)
