@@ -41,7 +41,7 @@ ops = {
 # TOTAL_IMEM_SIZE = 2**10
 
 # Don't need to do anything fancy here
-with open('program1.S') as ifile, open('machine_code.txt', 'w') as imem:
+with open('programs.S') as ifile, open('machine_code.txt', 'w') as imem:
 	for lineno, line in enumerate(ifile):
 		try:
 			# Skip over blank lines, remove comments

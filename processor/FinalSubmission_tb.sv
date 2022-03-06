@@ -64,8 +64,8 @@ initial begin
 
   // Test the correctness
   for(int j=30; j<60; j++) begin
-    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
-      $display("    DM[%d] - Good.", j);
+    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || DataMemoryAtFinish[j] == 2'hxx)
+      $display("    DM[%d] - GOOD. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
     else
       $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
   end
@@ -75,31 +75,31 @@ initial begin
 
 
 
-  // // Assert Start to "load" P2 as-needed
-  // $display("*** P2 Start");
-  // #10 Start = 'b1;
+  // Assert Start to "load" P2 as-needed
+  $display("*** P2 Start");
+  #10 Start = 'b1;
 
-  // // Load Data Memory for P2
-  // // You can do this here, or it may be easier to simply have loaded all
-  // // of data memory in the DataMem module during reset (this is the default
-  // // choice of the sample processors we gave).
+  // Load Data Memory for P2
+  // You can do this here, or it may be easier to simply have loaded all
+  // of data memory in the DataMem module during reset (this is the default
+  // choice of the sample processors we gave).
 
-  // // launch program in DUT
-  // #10 Start = 0;
+  // launch program in DUT
+  #10 Start = 0;
 
-  // // Wait for done flag, then display results
-  // wait (Ack);
+  // Wait for done flag, then display results
+  wait (Ack);
 
-  // // Test the correctness
-  // for(int j=94; j<124; j++) begin
-  //   if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
-  //     $display("    DM[%d] - Good.", j);
-  //   else
-  //     $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
-  // end
+  // Test the correctness
+  for(int j=94; j<124; j++) begin
+    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || DataMemoryAtFinish[j] == 2'hxx)
+      $display("    DM[%d] - GOOD. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+    else
+      $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+  end
 
-  // // Display any relevant diagnostic or performance measurments for P2
-  // $display("last instruction = %d", DUT.PC1.ProgCtr);
+  // Display any relevant diagnostic or performance measurments for P2
+  $display("last instruction = %d", DUT.PC1.ProgCtr);
 
 
 

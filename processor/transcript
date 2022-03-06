@@ -1,237 +1,24 @@
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 10:57:59 on Mar 05,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
-run -all
-# *** P1 Start
-#     DM[         30] - Good.
-#     DM[         31] - Good.
-#     DM[         32] - Good.
-#     DM[         33] - Good.
-# !!! DM[         34] - WRONG. Expected 0xde  Got 0xd8
-#     DM[         35] - Good.
-# !!! DM[         36] - WRONG. Expected 0x0a  Got 0x0c
-#     DM[         37] - Good.
-# !!! DM[         38] - WRONG. Expected 0xa9  Got 0xaf
-#     DM[         39] - Good.
-# !!! DM[         40] - WRONG. Expected 0x8b  Got 0x8d
-#     DM[         41] - Good.
-#     DM[         42] - Good.
-#     DM[         43] - Good.
-# !!! DM[         44] - WRONG. Expected 0x18  Got 0x1e
-#     DM[         45] - Good.
-# !!! DM[         46] - WRONG. Expected 0x82  Got 0x84
-#     DM[         47] - Good.
-#     DM[         48] - Good.
-#     DM[         49] - Good.
-#     DM[         50] - Good.
-#     DM[         51] - Good.
-# !!! DM[         52] - WRONG. Expected 0xdb  Got 0xdd
-#     DM[         53] - Good.
-# !!! DM[         54] - WRONG. Expected 0x28  Got 0x2e
-#     DM[         55] - Good.
-#     DM[         56] - Good.
-#     DM[         57] - Good.
-# !!! DM[         58] - WRONG. Expected 0x0f  Got 0x09
-#     DM[         59] - Good.
-# last instruction =  189
-# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
-#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
-# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-quit -sim
-# End time: 11:03:50 on Mar 05,2022, Elapsed time: 0:05:51
-# Errors: 0, Warnings: 1
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 11:04:11 on Mar 05,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
-run -all
-# *** P1 Start
-# !!! DM[         30] - WRONG. Expected 0xde  Got 0xd8
-#     DM[         31] - Good.
-#     DM[         32] - Good.
-#     DM[         33] - Good.
-#     DM[         34] - Good.
-#     DM[         35] - Good.
-# !!! DM[         36] - WRONG. Expected 0x0a  Got 0x0c
-#     DM[         37] - Good.
-# !!! DM[         38] - WRONG. Expected 0xa9  Got 0xaf
-#     DM[         39] - Good.
-# !!! DM[         40] - WRONG. Expected 0x8b  Got 0x8d
-#     DM[         41] - Good.
-#     DM[         42] - Good.
-#     DM[         43] - Good.
-# !!! DM[         44] - WRONG. Expected 0x18  Got 0x1e
-#     DM[         45] - Good.
-# !!! DM[         46] - WRONG. Expected 0x82  Got 0x84
-#     DM[         47] - Good.
-#     DM[         48] - Good.
-#     DM[         49] - Good.
-#     DM[         50] - Good.
-#     DM[         51] - Good.
-# !!! DM[         52] - WRONG. Expected 0xdb  Got 0xdd
-#     DM[         53] - Good.
-# !!! DM[         54] - WRONG. Expected 0x28  Got 0x2e
-#     DM[         55] - Good.
-#     DM[         56] - Good.
-#     DM[         57] - Good.
-# !!! DM[         58] - WRONG. Expected 0x0f  Got 0x09
-#     DM[         59] - Good.
-# last instruction =  189
-# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
-#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
-# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-quit -sim
-# End time: 11:23:06 on Mar 05,2022, Elapsed time: 0:18:55
-# Errors: 0, Warnings: 1
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 11:23:26 on Mar 05,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
-run -all
-# *** P1 Start
-#     DM[         30] - Good.
-#     DM[         31] - Good.
-#     DM[         32] - Good.
-#     DM[         33] - Good.
-#     DM[         34] - Good.
-#     DM[         35] - Good.
-#     DM[         36] - Good.
-#     DM[         37] - Good.
-#     DM[         38] - Good.
-#     DM[         39] - Good.
-#     DM[         40] - Good.
-#     DM[         41] - Good.
-#     DM[         42] - Good.
-#     DM[         43] - Good.
-#     DM[         44] - Good.
-#     DM[         45] - Good.
-#     DM[         46] - Good.
-#     DM[         47] - Good.
-#     DM[         48] - Good.
-#     DM[         49] - Good.
-#     DM[         50] - Good.
-#     DM[         51] - Good.
-#     DM[         52] - Good.
-#     DM[         53] - Good.
-#     DM[         54] - Good.
-#     DM[         55] - Good.
-#     DM[         56] - Good.
-#     DM[         57] - Good.
-#     DM[         58] - Good.
-#     DM[         59] - Good.
-# last instruction =  189
-# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
-#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
-# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-quit -sim
-# End time: 11:25:33 on Mar 05,2022, Elapsed time: 0:02:07
-# Errors: 0, Warnings: 1
+# Compile of ALU.sv failed with 1 errors.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful with warnings.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 1 failed with 1 error.
 # Compile of ALU.sv was successful.
 # Compile of CtrlReg.sv was successful.
 # Compile of DataMem.sv was successful.
 # Compile of Definitions.sv was successful.
-# Compile of FinalSubmission_tb.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful with warnings.
 # Compile of InstROM.sv was successful.
 # Compile of ProgCtr.sv was successful.
 # Compile of TopLevel.sv was successful.
 # 8 compiles, 0 failed with no errors.
 vsim -gui work.FinalSubmission_tb
 # vsim -gui work.FinalSubmission_tb 
-# Start time: 11:25:47 on Mar 05,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
-# Load canceled
-run -all
-# *** P1 Start
-#     DM[         30] - Good.
-#     DM[         31] - Good.
-#     DM[         32] - Good.
-#     DM[         33] - Good.
-#     DM[         34] - Good.
-#     DM[         35] - Good.
-#     DM[         36] - Good.
-#     DM[         37] - Good.
-#     DM[         38] - Good.
-#     DM[         39] - Good.
-#     DM[         40] - Good.
-#     DM[         41] - Good.
-#     DM[         42] - Good.
-#     DM[         43] - Good.
-#     DM[         44] - Good.
-#     DM[         45] - Good.
-#     DM[         46] - Good.
-#     DM[         47] - Good.
-#     DM[         48] - Good.
-#     DM[         49] - Good.
-#     DM[         50] - Good.
-#     DM[         51] - Good.
-#     DM[         52] - Good.
-#     DM[         53] - Good.
-#     DM[         54] - Good.
-#     DM[         55] - Good.
-#     DM[         56] - Good.
-#     DM[         57] - Good.
-#     DM[         58] - Good.
-#     DM[         59] - Good.
-# last instruction =  189
-# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
-#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
-# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-quit -sim
-# End time: 11:26:15 on Mar 05,2022, Elapsed time: 0:00:28
-# Errors: 0, Warnings: 2
-# Compile of ALU.sv was successful.
-# Compile of CtrlReg.sv was successful.
-# Compile of DataMem.sv was successful.
-# Compile of Definitions.sv was successful.
-# Compile of FinalSubmission_tb.sv was successful.
-# Compile of InstROM.sv was successful.
-# Compile of ProgCtr.sv was successful.
-# Compile of TopLevel.sv was successful.
-# 8 compiles, 0 failed with no errors.
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 11:26:51 on Mar 05,2022
+# Start time: 00:18:19 on Mar 06,2022
 # Loading sv_std.std
 # Loading work.FinalSubmission_tb
 # Loading work.TopLevel
@@ -245,163 +32,37 @@ vsim -gui work.FinalSubmission_tb
 # Loading work.DataMem
 run -all
 # *** P1 Start
-#     DM[         30] - Good.
-#     DM[         31] - Good.
-#     DM[         32] - Good.
-#     DM[         33] - Good.
-#     DM[         34] - Good.
-#     DM[         35] - Good.
-#     DM[         36] - Good.
-#     DM[         37] - Good.
-#     DM[         38] - Good.
-#     DM[         39] - Good.
-#     DM[         40] - Good.
-#     DM[         41] - Good.
-#     DM[         42] - Good.
-#     DM[         43] - Good.
-#     DM[         44] - Good.
-#     DM[         45] - Good.
-#     DM[         46] - Good.
-#     DM[         47] - Good.
-#     DM[         48] - Good.
-#     DM[         49] - Good.
-#     DM[         50] - Good.
-#     DM[         51] - Good.
-#     DM[         52] - Good.
-#     DM[         53] - Good.
-#     DM[         54] - Good.
-#     DM[         55] - Good.
-#     DM[         56] - Good.
-#     DM[         57] - Good.
-#     DM[         58] - Good.
-#     DM[         59] - Good.
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
 # last instruction =  189
-# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
-#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
-# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-quit -sim
-# End time: 11:27:15 on Mar 05,2022, Elapsed time: 0:00:24
-# Errors: 0, Warnings: 2
-# Compile of ALU.sv was successful.
-# Compile of CtrlReg.sv was successful.
-# Compile of DataMem.sv was successful.
-# Compile of Definitions.sv was successful.
-# Compile of FinalSubmission_tb.sv was successful.
-# Compile of InstROM.sv was successful.
-# Compile of ProgCtr.sv was successful.
-# Compile of TopLevel.sv was successful.
-# 8 compiles, 0 failed with no errors.
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 11:27:25 on Mar 05,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
-run -all
-# *** P1 Start
-#     DM[         30] - Good.
-#     DM[         31] - Good.
-#     DM[         32] - Good.
-#     DM[         33] - Good.
-#     DM[         34] - Good.
-#     DM[         35] - Good.
-#     DM[         36] - Good.
-#     DM[         37] - Good.
-#     DM[         38] - Good.
-#     DM[         39] - Good.
-#     DM[         40] - Good.
-#     DM[         41] - Good.
-#     DM[         42] - Good.
-#     DM[         43] - Good.
-#     DM[         44] - Good.
-#     DM[         45] - Good.
-#     DM[         46] - Good.
-#     DM[         47] - Good.
-#     DM[         48] - Good.
-#     DM[         49] - Good.
-#     DM[         50] - Good.
-#     DM[         51] - Good.
-#     DM[         52] - Good.
-#     DM[         53] - Good.
-#     DM[         54] - Good.
-#     DM[         55] - Good.
-#     DM[         56] - Good.
-#     DM[         57] - Good.
-#     DM[         58] - Good.
-#     DM[         59] - Good.
-# last instruction =  189
-# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
-#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
-# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-quit -sim
-# End time: 11:27:35 on Mar 05,2022, Elapsed time: 0:00:10
-# Errors: 0, Warnings: 2
-# Compile of ALU.sv was successful.
-# Compile of CtrlReg.sv was successful.
-# Compile of DataMem.sv was successful.
-# Compile of Definitions.sv was successful.
-# Compile of FinalSubmission_tb.sv was successful.
-# Compile of InstROM.sv was successful.
-# Compile of ProgCtr.sv was successful.
-# Compile of TopLevel.sv was successful.
-# 8 compiles, 0 failed with no errors.
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 11:28:07 on Mar 05,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
-run -all
-# *** P1 Start
-#     DM[         30] - Good.
-#     DM[         31] - Good.
-#     DM[         32] - Good.
-#     DM[         33] - Good.
-#     DM[         34] - Good.
-#     DM[         35] - Good.
-#     DM[         36] - Good.
-#     DM[         37] - Good.
-#     DM[         38] - Good.
-#     DM[         39] - Good.
-#     DM[         40] - Good.
-#     DM[         41] - Good.
-#     DM[         42] - Good.
-#     DM[         43] - Good.
-#     DM[         44] - Good.
-#     DM[         45] - Good.
-#     DM[         46] - Good.
-#     DM[         47] - Good.
-#     DM[         48] - Good.
-#     DM[         49] - Good.
-#     DM[         50] - Good.
-#     DM[         51] - Good.
-#     DM[         52] - Good.
-#     DM[         53] - Good.
-#     DM[         54] - Good.
-#     DM[         55] - Good.
-#     DM[         56] - Good.
-#     DM[         57] - Good.
-#     DM[         58] - Good.
-#     DM[         59] - Good.
-# last instruction =  189
-# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
-#    Time: 27825 ns  Iteration: 0  Instance: /FinalSubmission_tb
-# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-# End time: 11:28:34 on Mar 05,2022, Elapsed time: 0:00:27
-# Errors: 0, Warnings: 2
+# *** P2 Start
+# Break key hit
+# Simulation stop requested.

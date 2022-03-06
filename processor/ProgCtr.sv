@@ -28,7 +28,7 @@ module ProgCtr #(parameter L=10) (
 	  	if (startCount == 0)
 		  ProgCtr <= 'd0; 				// first program start hardcoded
 		else if (startCount == 1)
-		  ProgCtr <= 'd189; 				// second program start hardcoded
+		  ProgCtr <= 'd190; 			// second program start hardcoded
 		// else if (startCount == 2)
 		//   ProgCtr <= 'dXXX; 				// third program start hardcoded
 		else

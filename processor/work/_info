@@ -11,26 +11,26 @@ cModel Technology
 dC:/intelFPGA_lite/20.1
 vALU
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 DXx4 work 11 definitions 0 22 n8dO?eh]DU^V39e23_eX;1
-DXx4 work 11 ALU_sv_unit 0 22 TC``lT7a9h2GHBjWGEoed0
-Z2 !s110 1646508471
+Z1 DXx4 work 11 definitions 0 22 >]S_D5aQFz;IGM`dQfn`K0
+DXx4 work 11 ALU_sv_unit 0 22 @<BNn:GB[8<[m;^FEb<]91
+Z2 !s110 1646554678
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 4P_>5kaWKnh1F8fS[`2Af3
-IOa9YjRM0F;gQYUC2=WH>i3
+!s100 @eB118>hH9NonmB:Q3dlS2
+IXRBRnLmlAX6EN]TFBWVMT3
 !s105 ALU_sv_unit
 S1
 Z4 dC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor
-Z5 w1646428815
+Z5 w1646546233
 Z6 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv
 Z7 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv
-!i122 135
-L0 4 29
+!i122 150
+L0 4 30
 Z8 OV;L;2020.1;71
 31
-Z9 !s108 1646508471.000000
+Z9 !s108 1646554678.000000
 Z10 !s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv|
 Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv|
 !i113 1
@@ -41,19 +41,19 @@ XALU_sv_unit
 R0
 R1
 R2
-VTC``lT7a9h2GHBjWGEoed0
+V@<BNn:GB[8<[m;^FEb<]91
 r1
 !s85 0
 !i10b 1
-!s100 P10j04YFce@z25CbM^oE=0
-ITC``lT7a9h2GHBjWGEoed0
+!s100 9JVi?Q:ie0;EOnfRRg2::2
+I@<BNn:GB[8<[m;^FEb<]91
 !i103 1
 S1
 R4
 R5
 R6
 R7
-!i122 135
+!i122 150
 Z14 L0 1 0
 R8
 31
@@ -107,7 +107,7 @@ R4
 Z18 w1646459263
 Z19 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv
 Z20 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv
-!i122 136
+!i122 151
 L0 5 118
 R8
 31
@@ -134,7 +134,7 @@ R4
 R18
 R19
 R20
-!i122 136
+!i122 151
 R14
 R8
 31
@@ -158,7 +158,7 @@ R4
 w1646508460
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/DataMem.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/DataMem.sv
-!i122 137
+!i122 152
 L0 2 24
 R8
 r1
@@ -175,16 +175,16 @@ Xdefinitions
 R0
 R2
 !i10b 1
-!s100 G[_Jc0XQ5^SVA2MX1`^BD2
+!s100 8HlfSZ2fkl^@amOJz>a@@2
 R16
-In8dO?eh]DU^V39e23_eX;1
-Vn8dO?eh]DU^V39e23_eX;1
+I>]S_D5aQFz;IGM`dQfn`K0
+V>]S_D5aQFz;IGM`dQfn`K0
 S1
 R4
-w1645944491
+w1646546217
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv
-!i122 138
+!i122 153
 L0 4 0
 R8
 r1
@@ -200,16 +200,16 @@ vFinalSubmission_tb
 R0
 R2
 !i10b 1
-!s100 bZ7N8gKYbUg>ZAPOdC^621
+!s100 :fgQ<;dg7;DV3=[a:Q;310
 R16
-I[ilQ4F:531Ob3kQfjBO=^2
+I2mY6z7XJ`iL2NPTIEh>SP2
 R3
 S1
 R4
-w1646508458
+w1646554597
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv
-!i122 139
+!i122 154
 L0 16 128
 R8
 r1
@@ -235,7 +235,7 @@ R4
 w1646463333
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv
-!i122 140
+!i122 155
 L0 3 15
 R8
 r1
@@ -276,24 +276,24 @@ R13
 n@instruction@fetch_tb
 vProgCtr
 R0
-Z23 !s110 1646508472
+R2
 !i10b 1
-!s100 N4H56z8TN>oH7ZE0?8MBn0
+!s100 WiiI]8UEiokb;7`N;f53O3
 R16
-IEcM14mjnYIXoHSH7j^9F[3
+IeBCd2l@Y2J0HC2UFM=BYO2
 R3
 S1
 R4
-w1646460810
+w1646554262
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv
-!i122 141
+!i122 156
 L0 2 76
 R8
 r1
 !s85 0
 31
-Z24 !s108 1646508472.000000
+R9
 !s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv|
 !i113 1
@@ -302,7 +302,7 @@ R13
 n@prog@ctr
 vTopLevel
 R0
-R23
+R2
 !i10b 1
 !s100 8`g@M6RZP_Ya4;55bo]cS1
 R16
@@ -310,16 +310,16 @@ I_N8<;5b]6<T^JUPJ@CnTH3
 R3
 S1
 R4
-w1646463286
+w1646546254
 8C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv
 FC:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv
-!i122 142
+!i122 157
 L0 2 81
 R8
 r1
 !s85 0
 31
-R24
+R9
 !s107 C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv|
 !i113 1
