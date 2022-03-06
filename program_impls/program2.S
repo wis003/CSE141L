@@ -1,88 +1,3 @@
-// W is data path width (8 bits)
-// byte count = number of "words" (bytes) in reg_file
-//   or data_memory
-module top_level #(parameter W=8,
-                   byte_count = 256)(
-  input        clk, 
-               init,	           // req. from test bench
-  output logic done);	           // ack. to test bench
-
-// memory interface = 
-//   write_en, raddr, waddr, data_in, data_out: 
-  logic write_en;                  // store enable for dat_mem
-
-// address pointers for reg_file/data_mem
-  logic[$clog2(byte_count)-1:0] raddr, waddr;
-
-// data path connections into/out of reg file/data mem
-  logic[W-1:0] data_in;
-  wire [W-1:0] data_out; 
-
-/* instantiate data memory (reg file)
-   Here we can override the two parameters, if we 
-     so desire (leaving them as defaults here) */
-  dat_mem #(.W(W),.byte_count(byte_count)) 
-    dm1(.*);		               // reg_file or data memory
-
-
-// program counter: bits[6:3] count passes through for loop/subroutine
-// bits[2:0] count clock cycles within subroutine (I use 5 out of 8 possible, pad w/ 3 no ops)
-  logic[ 6:0] count;
-  logic[ 8:0] parity;
-  logic[15:0] temp1, temp2, temp_working;
-  logic       temp1_enh, temp1_enl, temp2_en, temp3_en;
-  logic       p8, p4, p2, p1, p0;
-  logic[ 3:0] casenum;
-
-  always_comb begin
-
-    // hamming code
-    parity[8] = ^temp1[15:9];
-    parity[4] = (^temp1[15:12])^(^temp1[7:5]); 
-    parity[2] = temp1[15]^temp1[14]^temp1[11]^temp1[10]^temp1[7]^temp1[6]^temp1[3];
-    parity[1] = temp1[15]^temp1[13]^temp1[11]^temp1[9]^temp1[7]^temp1[5]^temp1[3];
-    parity[0] = ^temp1[15:1];
-
-    // check for equality
-    p8 = (parity[8] == temp1[8]);
-    p4 = (parity[4] == temp1[4]);
-    p2 = (parity[2] == temp1[2]);
-    p1 = (parity[1] == temp1[1]);
-    p0 = (parity[0] == temp1[0]);
-    casenum = {p8, p4, p2, p1};
-
-    // error detection
-    if(p0 && casenum < 15) temp_working = 'b1000_0000_0000_0000; // two errors
-    else if(!p0 && casenum == 15) temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p0
-    else begin
-      case(casenum)
-        0:  temp_working = {5'b01000, !temp1[15], temp1[14:9], temp1[7:5], temp1[3]}; // b11
-        1:  temp_working = {5'b01000, temp1[15], !temp1[14], temp1[13:9], temp1[7:5], temp1[3]}; // b10
-        2:  temp_working = {5'b01000, temp1[15:14], !temp1[13], temp1[12:9], temp1[7:5], temp1[3]}; // b9
-        3:  temp_working = {5'b01000, temp1[15:13], !temp1[12], temp1[11:9], temp1[7:5], temp1[3]}; // b8
-        4:  temp_working = {5'b01000, temp1[15:12], !temp1[11], temp1[10:9], temp1[7:5], temp1[3]}; // b7
-        5:  temp_working = {5'b01000, temp1[15:11], !temp1[10], temp1[9], temp1[7:5], temp1[3]}; // b6
-        6:  temp_working = {5'b01000, temp1[15:10], !temp1[9], temp1[7:5], temp1[3]}; // b5
-
-        7:  temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p8
-
-        8:  temp_working = {5'b01000, temp1[15:9], !temp1[7], temp1[6:5], temp1[3]}; // b4
-        9:  temp_working = {5'b01000, temp1[15:9], temp1[7], !temp1[6], temp1[5], temp1[3]}; // b3
-        10: temp_working = {5'b01000, temp1[15:9], temp1[7:6], !temp1[5], temp1[3]}; // b2
-
-        11: temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p4
-
-        12: temp_working = {5'b01000, temp1[15:9], temp1[7:5], !temp1[3]}; // b1
-
-        13: temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p2
-        14: temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p1
-
-        default: temp_working = {5'b00000, temp1[15:9], temp1[7:5], temp1[3]}; // no errors
-      endcase
-    end
-
-  end
-
 // FEC Receiver
 //
 // Description: Given a series of 15 two-byte encoded data values – possibly corrupted – in data mem[64:93],
@@ -239,8 +154,9 @@ xor r0 r0                       // parity[16]
 set 10
 put r3 r0                       // parity[16] stored in r10
 
-// branch to casenum
-
+// branch to casenum logic
+set 40
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO default)
 
 // place output (MEM[2*counter + 94] and MEM[2*counter + 95])
 set 4                           // r3 = 4
@@ -279,43 +195,14 @@ add r2 r3                       // r2 = r2 + r3
 sne r0 r1                       // r0 = (r0 != r1)
 set 0                           // r3 = 0
 and r1 r3                       // r1 = r1 & r3
-set 11                          // r3 = 11
+set 5                           // r3 = 5
 add r1 r3                       // r1 = r1 + r3
-set 4                           // r3 = 4
-sleft r1 r3                     // r1 = r1 << r3 (r1 = 176) 
-set 8                           // r3 = 8
-add r1 r3                       // r1 = r1 + r3 (r1 = 184) **********TODO**********
-b_up r0 r2 r1                   // if (r0 == r2) PC = PC - r1 (loop back to PC 4 from PC 188 if count != 15)
+sleft r1 r3                     // r1 = r1 << r3 (r1 = 160) 
+set 7                           // r3 = 7
+add r1 r3                       // r1 = r1 + r3 (r1 = 167)
+b_up r0 r2 r1                   // if (r0 == r2) PC = PC - r1 (loop back to PC 4 from PC 171 if count != 15)
 
-// error detection
-if(p0 && casenum < 15) temp_working = 'b1000_0000_0000_0000; // two errors
-else if(!p0 && casenum == 15) temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p0
-else begin
-  case(casenum)
-    0:  temp_working = {5'b01000, !temp1[15], temp1[14:9], temp1[7:5], temp1[3]}; // b11
-    1:  temp_working = {5'b01000, temp1[15], !temp1[14], temp1[13:9], temp1[7:5], temp1[3]}; // b10
-    2:  temp_working = {5'b01000, temp1[15:14], !temp1[13], temp1[12:9], temp1[7:5], temp1[3]}; // b9
-    3:  temp_working = {5'b01000, temp1[15:13], !temp1[12], temp1[11:9], temp1[7:5], temp1[3]}; // b8
-    4:  temp_working = {5'b01000, temp1[15:12], !temp1[11], temp1[10:9], temp1[7:5], temp1[3]}; // b7
-    5:  temp_working = {5'b01000, temp1[15:11], !temp1[10], temp1[9], temp1[7:5], temp1[3]}; // b6
-    6:  temp_working = {5'b01000, temp1[15:10], !temp1[9], temp1[7:5], temp1[3]}; // b5
-
-    7:  temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p8
-
-    8:  temp_working = {5'b01000, temp1[15:9], !temp1[7], temp1[6:5], temp1[3]}; // b4
-    9:  temp_working = {5'b01000, temp1[15:9], temp1[7], !temp1[6], temp1[5], temp1[3]}; // b3
-    10: temp_working = {5'b01000, temp1[15:9], temp1[7:6], !temp1[5], temp1[3]}; // b2
-
-    11: temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p4
-
-    12: temp_working = {5'b01000, temp1[15:9], temp1[7:5], !temp1[3]}; // b1
-
-    13: temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p2
-    14: temp_working = {5'b01000, temp1[15:9], temp1[7:5], temp1[3]}; // p1
-
-    default: temp_working = {5'b00000, temp1[15:9], temp1[7:5], temp1[3]}; // no errors
-  endcase
-end
+halt
 
 // default
 set 5
@@ -358,8 +245,8 @@ set 1
 sne r0 r3                       // r0 = ((parity[16] && casenum < 15) != 1)
 set 0
 and r2 r3
-set 10
-add r2 r3                       // jump = 10
+set 17
+add r2 r3                       // jump = 17
 set 1
 b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 0)
 set 0                           // else
@@ -369,53 +256,248 @@ set 7
 put r3 r0                       // output MSW = 0xFF
 set 8
 put r3 r0                       // output LSW = 0xFF
-set 100000000                   // **********TODO**********
-b_up r0 r0 r3                   // if (r0 == r0) PC = PC + r3 (GOTO place output)
+set 0                           // r3 = 0
+and r1 r3                       // r1 = r1 & r3
+set 3                           // r3 = 3
+add r1 r3                       // r1 = r1 + r3
+set 5                           // r3 = 5
+sleft r1 r3                     // r1 = r1 << r3 (r1 = 96) 
+set 0                           // r3 = 0
+add r1 r3                       // r1 = r1 + r3 (r1 = 96)
+b_up r0 r0 r1                   // if (r0 == r0) PC = PC - r1 (GOTO place output)
 
 // casenum 0 (b11)
 set 9
 get r0 r3
 set 0
 sne r0 r3                       // r0 = (casenum != 0)
-set 10
-add r2 r3                       // jump = 10
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
 set 1
 b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 1)
+set 7                           // else
+get r0 r3
+set 4                           // mask = 0000_0100
+bxor r0 r3
+set 7
+put r3 r0                       // output MSW = 00000 !b11 b10 b9
+set 18                          // jump = 18
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 1 (b10)
-
-
+set 9
+get r0 r3
+set 1
+sne r0 r3                       // r0 = (casenum != 1)
+set 0
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 2)
+set 7                           // else
+get r0 r3
+set 2                           // mask = 0000_0010
+bxor r0 r3
+set 7
+put r3 r0                       // output MSW = 00000 b11 !b10 b9
+set 18                          // jump = 18
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 2 (b9)
-
-
+set 9
+get r0 r3
+set 2
+sne r0 r3                       // r0 = (casenum != 2)
+set 0
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 3)
+set 7                           // else
+get r0 r3
+set 1                           // mask = 0000_0001
+bxor r0 r3
+set 7
+put r3 r0                       // output MSW = 00000 b11 b10 !b9
+set 23                          // jump = 23
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 3 (b8)
-
-
+set 9
+get r0 r3
+set 3
+sne r0 r3                       // r0 = (casenum != 3)
+set 0
+and r2 r3
+set 14
+add r2 r3                       // jump = 14
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 4)
+set 8                           // else
+get r0 r3
+set 0
+and r1 r3
+set 1
+add r1 r3
+set 7
+sleft r1 r3                     // mask = 1000_0000
+bxor r0 r1
+set 8
+put r3 r0                       // output MSW = !b8 b7:b1
+set 23                          // jump = 23
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 4 (b7)
-
-
+set 9
+get r0 r3
+set 4
+sne r0 r3                       // r0 = (casenum != 4)
+set 0
+and r2 r3
+set 14
+add r2 r3                       // jump = 14
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 5)
+set 8                           // else
+get r0 r3
+set 0
+and r1 r3
+set 1
+add r1 r3
+set 6
+sleft r1 r3                     // mask = 0100_0000
+bxor r0 r1
+set 8
+put r3 r0                       // output MSW = b8 !b7 b6:b1
+set 17                          // jump = 17
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 5 (b6)
-
-
+set 9
+get r0 r3
+set 5
+sne r0 r3                       // r0 = (casenum != 5)
+set 0
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 6)
+set 8                           // else
+get r0 r3
+set 32                          // mask = 0010_0000
+bxor r0 r3
+set 8
+put r3 r0                       // output MSW = b8 b7 !b6 b5:b1
+set 17                          // jump = 17
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 6 (b5)
-
-
+set 9
+get r0 r3
+set 6
+sne r0 r3                       // r0 = (casenum != 6)
+set 0
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 8)
+set 8                           // else
+get r0 r3
+set 16                          // mask = 0001_0000
+bxor r0 r3
+set 8
+put r3 r0                       // output MSW = b8:b6 !b5 b4:b1
+set 17                          // jump = 17
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 8 (b4)
-
-
+set 9
+get r0 r3
+set 8
+sne r0 r3                       // r0 = (casenum != 8)
+set 0
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 9)
+set 8                           // else
+get r0 r3
+set 8                           // mask = 0000_1000
+bxor r0 r3
+set 8
+put r3 r0                       // output MSW = b8:b5 !b4 b3:b1
+set 17                          // jump = 17
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 9 (b3)
-
-
+set 9
+get r0 r3
+set 9
+sne r0 r3                       // r0 = (casenum != 9)
+set 0
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 10)
+set 8                           // else
+get r0 r3
+set 4                           // mask = 0000_0100
+bxor r0 r3
+set 8
+put r3 r0                       // output MSW = b8:b4 !b3 b2 b1
+set 17                          // jump = 17
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 10 (b2)
-
-
+set 9
+get r0 r3
+set 10
+sne r0 r3                       // r0 = (casenum != 10)
+set 0
+and r2 r3
+set 9
+add r2 r3                       // jump = 9
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO casenum 12)
+set 8                           // else
+get r0 r3
+set 2                           // mask = 0000_0010
+bxor r0 r3
+set 8
+put r3 r0                       // output MSW = b8:b3 !b2 b1
+set 17                          // jump = 17
+b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 12 (b1)
+set 9
+get r0 r3
+set 12
+sne r0 r3                       // r0 = (casenum != 12)
+set 0
+and r2 r3
+set 15
+add r2 r3                       // jump = 15
+set 1
+b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO place output)
+set 8                           // else
+get r0 r3
+set 1                           // mask = 0000_0001
+bxor r0 r3
+set 8
+put r3 r0                       // output MSW = b8:b2 !b1
+set 0                           // r3 = 0
+and r1 r3                       // r1 = r1 & r3
+set 3                           // r3 = 3
+add r1 r3                       // r1 = r1 + r3
+set 6                           // r3 = 6
+sleft r1 r3                     // r1 = r1 << r3 (r1 = 192) 
+set 30                          // r3 = 30
+add r1 r3                       // r1 = r1 + r3 (r1 = 222)
+b_up r0 r0 r1                   // if (r0 == r0) PC = PC - r1 (GOTO place output)
