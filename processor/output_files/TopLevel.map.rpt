@@ -1,0 +1,456 @@
+Analysis & Synthesis report for TopLevel
+Mon Mar 07 14:45:32 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: ProgCtr:PC1
+ 11. Parameter Settings for User Entity Instance: InstROM:IR1
+ 12. Parameter Settings for User Entity Instance: CtrlReg:CtrlReg1
+ 13. Parameter Settings for User Entity Instance: ALU:ALU1
+ 14. Parameter Settings for User Entity Instance: DataMem:DM1
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Mar 07 14:45:32 2022       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; TopLevel                                    ;
+; Top-level Entity Name           ; TopLevel                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 2189                                        ;
+; Total pins                      ; 4                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; TopLevel           ; TopLevel           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                          ;
++---------------------------------------------------------------------------------------------------+-----------------+---------------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                                                  ; Used in Netlist ; File Type                                   ; File Name with Absolute Path                                                                      ; Library ;
++---------------------------------------------------------------------------------------------------+-----------------+---------------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; TopLevel.sv                                                                                       ; yes             ; User SystemVerilog HDL File                 ; C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv                        ;         ;
+; ProgCtr.sv                                                                                        ; yes             ; User SystemVerilog HDL File                 ; C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv                         ;         ;
+; InstROM.sv                                                                                        ; yes             ; User SystemVerilog HDL File                 ; C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv                         ;         ;
+; Definitions.sv                                                                                    ; yes             ; User SystemVerilog HDL File                 ; C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv                     ;         ;
+; DataMem.sv                                                                                        ; yes             ; User SystemVerilog HDL File                 ; C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/DataMem.sv                         ;         ;
+; CtrlReg.sv                                                                                        ; yes             ; User SystemVerilog HDL File                 ; C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv                         ;         ;
+; ALU.sv                                                                                            ; yes             ; User SystemVerilog HDL File                 ; C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv                             ;         ;
+; /users/18587/desktop/ucsd/classes/cse 141l/cse141l/program_impls/machine_code.txt                 ; yes             ; Auto-Found File                             ; /users/18587/desktop/ucsd/classes/cse 141l/cse141l/program_impls/machine_code.txt                 ;         ;
+; /users/18587/desktop/ucsd/classes/cse 141l/cse141l/program_impls/data_mem/data_mem_04-initial.hex ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /users/18587/desktop/ucsd/classes/cse 141l/cse141l/program_impls/data_mem/data_mem_04-initial.hex ;         ;
++---------------------------------------------------------------------------------------------------+-----------------+---------------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 1825      ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 2448      ;
+;     -- 7 input functions                    ; 8         ;
+;     -- 6 input functions                    ; 1025      ;
+;     -- 5 input functions                    ; 63        ;
+;     -- 4 input functions                    ; 31        ;
+;     -- <=3 input functions                  ; 1321      ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 2189      ;
+;                                             ;           ;
+; I/O pins                                    ; 4         ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 2189      ;
+; Total fan-out                               ; 15038     ;
+; Average fan-out                             ; 3.24      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
+; |TopLevel                  ; 2448 (0)            ; 2189 (0)                  ; 0                 ; 0          ; 4    ; 0            ; |TopLevel                  ; TopLevel    ; work         ;
+;    |ALU:ALU1|              ; 55 (55)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|ALU:ALU1         ; ALU         ; work         ;
+;    |CtrlReg:CtrlReg1|      ; 170 (170)           ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|CtrlReg:CtrlReg1 ; CtrlReg     ; work         ;
+;    |DataMem:DM1|           ; 2014 (2014)         ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|DataMem:DM1      ; DataMem     ; work         ;
+;    |InstROM:IR1|           ; 181 (181)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|InstROM:IR1      ; InstROM     ; work         ;
+;    |ProgCtr:PC1|           ; 28 (28)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|ProgCtr:PC1      ; ProgCtr     ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2189  ;
+; Number of registers using Synchronous Clear  ; 138   ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2186  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[0][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[1][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[2][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[3][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[4][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[5][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[6][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[7][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[8][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[9][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[10][3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[11][3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[12][3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[13][2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[14][4] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopLevel|CtrlReg:CtrlReg1|Registers[15][4] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopLevel|ProgCtr:PC1|StartCount[1]         ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |TopLevel|ProgCtr:PC1|ProgCtr[0]            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TopLevel|CtrlReg:CtrlReg1|Mux20            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TopLevel|CtrlReg:CtrlReg1|Mux37            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TopLevel|CtrlReg:CtrlReg1|Mux28            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|CtrlReg:CtrlReg1|Mux57            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|ProgCtr:PC1|Add0                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|ALU:ALU1|ShiftLeft0               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|ALU:ALU1|ShiftLeft0               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|ALU:ALU1|ShiftRight0              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopLevel|CtrlReg:CtrlReg1|Waddr[2]         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |TopLevel|CtrlReg:CtrlReg1|Mux59            ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |TopLevel|ProgCtr:PC1|Add0                  ;
+; 43:1               ; 3 bits    ; 84 LEs        ; 72 LEs               ; 12 LEs                 ; No         ; |TopLevel|CtrlReg:CtrlReg1|Mux65            ;
+; 43:1               ; 2 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; No         ; |TopLevel|CtrlReg:CtrlReg1|Mux63            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProgCtr:PC1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; L              ; 10    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: InstROM:IR1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; A              ; 10    ; Signed Integer                  ;
+; W              ; 9     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CtrlReg:CtrlReg1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; W              ; 8     ; Signed Integer                       ;
+; A              ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:ALU1 ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; W              ; 8     ; Signed Integer               ;
+; Ops            ; 4     ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DataMem:DM1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; W              ; 8     ; Signed Integer                  ;
+; A              ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 2189                        ;
+;     ENA               ; 2048                        ;
+;     ENA SCLR          ; 138                         ;
+;     SLD               ; 1                           ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 2448                        ;
+;     arith             ; 28                          ;
+;         0 data inputs ; 1                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 9                           ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 2412                        ;
+;         1 data inputs ; 1010                        ;
+;         2 data inputs ; 281                         ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 29                          ;
+;         5 data inputs ; 54                          ;
+;         6 data inputs ; 1025                        ;
+; boundary_port         ; 4                           ;
+;                       ;                             ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 7.11                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Mar 07 14:45:19 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CSE141L_Processor -c TopLevel
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel.sv
+    Info (12023): Found entity 1: TopLevel File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file progctr.sv
+    Info (12023): Found entity 1: ProgCtr File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file instrom.sv
+    Info (12023): Found entity 1: InstROM File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv Line: 3
+Info (12021): Found 1 design units, including 0 entities, in source file definitions.sv
+    Info (12022): Found design unit 1: definitions (SystemVerilog) File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/Definitions.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file datamem.sv
+    Info (12023): Found entity 1: DataMem File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/DataMem.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file ctrlreg.sv
+    Info (12023): Found entity 1: CtrlReg File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: ALU File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv Line: 4
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "ProgCtr" for hierarchy "ProgCtr:PC1" File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at ProgCtr.sv(22): truncated value with size 32 to match size of target (10) File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ProgCtr.sv Line: 22
+Info (12128): Elaborating entity "InstROM" for hierarchy "InstROM:IR1" File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv Line: 36
+Warning (10850): Verilog HDL warning at InstROM.sv(14): number of words (838) in memory file does not match the number of elements in the address range [0:1023] File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv Line: 14
+Warning (10030): Net "inst_rom.data_a" at InstROM.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv Line: 9
+Warning (10030): Net "inst_rom.waddr_a" at InstROM.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv Line: 9
+Warning (10030): Net "inst_rom.we_a" at InstROM.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv Line: 9
+Info (12128): Elaborating entity "CtrlReg" for hierarchy "CtrlReg:CtrlReg1" File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv Line: 53
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(45): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 45
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(46): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 46
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(52): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 52
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(56): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 56
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(57): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 57
+Warning (10230): Verilog HDL assignment warning at CtrlReg.sv(57): truncated value with size 8 to match size of target (4) File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 57
+Warning (10270): Verilog HDL Case Statement warning at CtrlReg.sv(50): incomplete case statement has no default case item File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 50
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(80): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 80
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(92): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 92
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(93): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 93
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(101): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 101
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(102): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 102
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(107): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 107
+Warning (10027): Verilog HDL or VHDL warning at the CtrlReg.sv(108): index expression is not wide enough to address all of the elements in the array File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv Line: 108
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU1" File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv Line: 60
+Warning (10036): Verilog HDL or VHDL warning at ALU.sv(11): object "op_mnemonic" assigned a value but never read File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv Line: 11
+Warning (10230): Verilog HDL assignment warning at ALU.sv(17): truncated value with size 32 to match size of target (8) File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv Line: 17
+Warning (10270): Verilog HDL Case Statement warning at ALU.sv(15): incomplete case statement has no default case item File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/ALU.sv Line: 15
+Info (12128): Elaborating entity "DataMem" for hierarchy "DataMem:DM1" File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv Line: 69
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "DataMem:DM1|Core" is uninferred due to asynchronous read logic File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/DataMem.sv Line: 11
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/db/TopLevel.ram0_InstROM_15efe571.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3618 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 3614 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Mon Mar 07 14:45:32 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:22
+
+

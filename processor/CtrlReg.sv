@@ -32,6 +32,12 @@ module CtrlReg #(parameter W=8, A=4)(
     WriteEn = 0;
     DataIn = ALUData;
     Ack = &Instruction; // reserve instruction = 9'b111111111 for Ack
+
+    DataOutA = 0;
+    DataOutB = 0;
+    PCTarget = 0;
+    ALUInst = 0;
+    Waddr = 0;
     
     case (Instruction[8:7])							  
       2'b00 : begin // Memory and Comparison
