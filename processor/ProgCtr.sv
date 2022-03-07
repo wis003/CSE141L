@@ -37,7 +37,7 @@ module ProgCtr #(parameter L=10) (
 			case (StartCount)
 				1: ProgCtr <= 'd000;
 				2: ProgCtr <= 'd190;
-				// 3: ProgCtr <= 'd200;
+				3: ProgCtr <= 'd639;
 				default: ProgCtr <= ProgCtr;
 			endcase
 		end

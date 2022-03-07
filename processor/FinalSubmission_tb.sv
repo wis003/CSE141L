@@ -65,7 +65,7 @@ initial begin
   // Test the correctness
   for (int j = 30; j < 60; j++) begin
     if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
-      $display("    DM[%d] - GOOD. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+      $display("    DM[%d] - GOOD.  Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
     else
       $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
   end
@@ -93,7 +93,7 @@ initial begin
   // Test the correctness
   for (int j = 94; j < 124; j++) begin
     if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || $isunknown(DataMemoryAtFinish[j]))
-      $display("    DM[%d] - GOOD. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+      $display("    DM[%d] - GOOD.  Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
     else
       $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
   end
@@ -103,33 +103,31 @@ initial begin
 
 
 
-  // // Assert Start to "load" P3 as-needed
-  // $display("*** P3 Start");
-  // #10 Start = 'b1;
+  // Assert Start to "load" P3 as-needed
+  $display("*** P3 Start");
+  #10 Start = 'b1;
 
-  // // Load Data Memory for P3
-  // // You can do this here, or it may be easier to simply have loaded all
-  // // of data memory in the DataMem module during reset (this is the default
-  // // choice of the sample processors we gave).
+  // Load Data Memory for P3
+  // You can do this here, or it may be easier to simply have loaded all
+  // of data memory in the DataMem module during reset (this is the default
+  // choice of the sample processors we gave).
 
-  // // launch program in DUT
-  // #10 Start = 0;
+  // launch program in DUT
+  #10 Start = 0;
 
-  // // Wait for done flag, then display results
-  // wait (Ack);
+  // Wait for done flag, then display results
+  wait (Ack);
 
-  // // Test the correctness
-  // for(int j=192; j<195; j++) begin
-  //   if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
-  //     $display("    DM[%d] - Good.", j);
-  //   else
-  //     $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
-  // end
+  // Test the correctness
+  for(int j = 192; j < 195; j++) begin
+    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
+      $display("    DM[%d] - Good.  Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+    else
+      $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+  end
 
-  // // Display any relevant diagnostic or performance measurments for P3
-  // $display("last instruction = %d", DUT.PC1.ProgCtr);
-
-
+  // Display any relevant diagnostic or performance measurments for P3
+  $display("last instruction = %d", DUT.PC1.ProgCtr);
 
   #10 $stop;
 end
@@ -141,4 +139,3 @@ always begin   // clock period = 10 Verilog time units
 end
 
 endmodule
-
