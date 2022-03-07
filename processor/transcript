@@ -1,24 +1,6 @@
-# Compile of ALU.sv failed with 1 errors.
-# Compile of CtrlReg.sv was successful.
-# Compile of DataMem.sv was successful.
-# Compile of Definitions.sv was successful.
-# Compile of FinalSubmission_tb.sv was successful with warnings.
-# Compile of InstROM.sv was successful.
-# Compile of ProgCtr.sv was successful.
-# Compile of TopLevel.sv was successful.
-# 8 compiles, 1 failed with 1 error.
-# Compile of ALU.sv was successful.
-# Compile of CtrlReg.sv was successful.
-# Compile of DataMem.sv was successful.
-# Compile of Definitions.sv was successful.
-# Compile of FinalSubmission_tb.sv was successful with warnings.
-# Compile of InstROM.sv was successful.
-# Compile of ProgCtr.sv was successful.
-# Compile of TopLevel.sv was successful.
-# 8 compiles, 0 failed with no errors.
 vsim -gui work.FinalSubmission_tb
 # vsim -gui work.FinalSubmission_tb 
-# Start time: 00:18:19 on Mar 06,2022
+# Start time: 09:58:58 on Mar 06,2022
 # Loading sv_std.std
 # Loading work.FinalSubmission_tb
 # Loading work.TopLevel
@@ -30,121 +12,7 @@ vsim -gui work.FinalSubmission_tb
 # Loading work.ALU_sv_unit
 # Loading work.ALU
 # Loading work.DataMem
-run -all
-# *** P1 Start
-#     DM[         30] - GOOD. Expected 0x90  Got 0x90
-#     DM[         31] - GOOD. Expected 0x35  Got 0x35
-#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
-#     DM[         33] - GOOD. Expected 0x48  Got 0x48
-#     DM[         34] - GOOD. Expected 0x03  Got 0x03
-#     DM[         35] - GOOD. Expected 0x30  Got 0x30
-#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
-#     DM[         37] - GOOD. Expected 0x22  Got 0x22
-#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
-#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
-#     DM[         40] - GOOD. Expected 0x41  Got 0x41
-#     DM[         41] - GOOD. Expected 0x27  Got 0x27
-#     DM[         42] - GOOD. Expected 0x36  Got 0x36
-#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
-#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
-#     DM[         45] - GOOD. Expected 0x30  Got 0x30
-#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
-#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
-#     DM[         48] - GOOD. Expected 0x82  Got 0x82
-#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
-#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
-#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
-#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
-#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
-#     DM[         54] - GOOD. Expected 0x95  Got 0x95
-#     DM[         55] - GOOD. Expected 0x95  Got 0x95
-#     DM[         56] - GOOD. Expected 0x42  Got 0x42
-#     DM[         57] - GOOD. Expected 0x81  Got 0x81
-#     DM[         58] - GOOD. Expected 0x88  Got 0x88
-#     DM[         59] - GOOD. Expected 0x87  Got 0x87
-# last instruction =  189
-# *** P2 Start
-# Break key hit
-# Simulation stop requested.
-quit -sim
-# End time: 00:24:14 on Mar 06,2022, Elapsed time: 0:05:55
-# Errors: 0, Warnings: 3
-# Compile of ALU.sv was successful.
-# Compile of CtrlReg.sv was successful.
-# Compile of DataMem.sv was successful.
-# Compile of Definitions.sv was successful.
-# Compile of FinalSubmission_tb.sv was successful with warnings.
-# Compile of InstROM.sv was successful.
-# Compile of ProgCtr.sv was successful.
-# Compile of TopLevel.sv was successful.
-# 8 compiles, 0 failed with no errors.
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 00:24:35 on Mar 06,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
-run -all
-# *** P1 Start
-#     DM[         30] - GOOD. Expected 0x90  Got 0x90
-#     DM[         31] - GOOD. Expected 0x35  Got 0x35
-#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
-#     DM[         33] - GOOD. Expected 0x48  Got 0x48
-#     DM[         34] - GOOD. Expected 0x03  Got 0x03
-#     DM[         35] - GOOD. Expected 0x30  Got 0x30
-#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
-#     DM[         37] - GOOD. Expected 0x22  Got 0x22
-#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
-#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
-#     DM[         40] - GOOD. Expected 0x41  Got 0x41
-#     DM[         41] - GOOD. Expected 0x27  Got 0x27
-#     DM[         42] - GOOD. Expected 0x36  Got 0x36
-#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
-#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
-#     DM[         45] - GOOD. Expected 0x30  Got 0x30
-#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
-#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
-#     DM[         48] - GOOD. Expected 0x82  Got 0x82
-#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
-#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
-#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
-#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
-#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
-#     DM[         54] - GOOD. Expected 0x95  Got 0x95
-#     DM[         55] - GOOD. Expected 0x95  Got 0x95
-#     DM[         56] - GOOD. Expected 0x42  Got 0x42
-#     DM[         57] - GOOD. Expected 0x81  Got 0x81
-#     DM[         58] - GOOD. Expected 0x88  Got 0x88
-#     DM[         59] - GOOD. Expected 0x87  Got 0x87
-# last instruction =  189
-# *** P2 Start
-# Break key hit
-# Simulation stop requested.
-quit -sim
-# End time: 00:29:33 on Mar 06,2022, Elapsed time: 0:04:58
-# Errors: 0, Warnings: 2
-vsim -gui work.FinalSubmission_tb
-# vsim -gui work.FinalSubmission_tb 
-# Start time: 00:29:46 on Mar 06,2022
-# Loading sv_std.std
-# Loading work.FinalSubmission_tb
-# Loading work.TopLevel
-# Loading work.ProgCtr
-# Loading work.InstROM
-# Loading work.definitions
-# Loading work.CtrlReg_sv_unit
-# Loading work.CtrlReg
-# Loading work.ALU_sv_unit
-# Loading work.ALU
-# Loading work.DataMem
+add wave -position insertpoint sim:/FinalSubmission_tb/DUT/*
 run -all
 # *** P1 Start
 #     DM[         30] - GOOD. Expected 0x90  Got 0x90
@@ -213,5 +81,683 @@ run -all
 # ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
 #    Time: 67555 ns  Iteration: 0  Instance: /FinalSubmission_tb
 # Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
-# End time: 00:32:16 on Mar 06,2022, Elapsed time: 0:02:30
+quit -sim
+# End time: 16:06:59 on Mar 06,2022, Elapsed time: 6:08:01
 # Errors: 0, Warnings: 1
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 16:07:11 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+run -all
+# *** P1 Start
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
+# last instruction =  189
+# *** P2 Start
+#     DM[         94] - GOOD. Expected 0x26  Got 0x26
+#     DM[         95] - GOOD. Expected 0x00  Got 0x00
+# !!! DM[         96] - WRONG. Expected 0x6e  Got 0xff
+# !!! DM[         97] - WRONG. Expected 0x07  Got 0xff
+# !!! DM[         98] - WRONG. Expected 0xab  Got 0xff
+# !!! DM[         99] - WRONG. Expected 0x02  Got 0xff
+# !!! DM[        100] - WRONG. Expected 0xxx  Got 0x97
+# !!! DM[        101] - WRONG. Expected 0xxx  Got 0x01
+# !!! DM[        102] - WRONG. Expected 0x4f  Got 0x13
+#     DM[        103] - GOOD. Expected 0x03  Got 0x03
+# !!! DM[        104] - WRONG. Expected 0xe1  Got 0xff
+# !!! DM[        105] - WRONG. Expected 0x07  Got 0xff
+# !!! DM[        106] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        107] - WRONG. Expected 0xxx  Got 0xff
+#     DM[        108] - GOOD. Expected 0x8a  Got 0x8a
+#     DM[        109] - GOOD. Expected 0x07  Got 0x07
+# !!! DM[        110] - WRONG. Expected 0x04  Got 0xff
+# !!! DM[        111] - WRONG. Expected 0x04  Got 0xff
+# !!! DM[        112] - WRONG. Expected 0x43  Got 0xff
+# !!! DM[        113] - WRONG. Expected 0x02  Got 0xff
+# !!! DM[        114] - WRONG. Expected 0x33  Got 0xff
+# !!! DM[        115] - WRONG. Expected 0x03  Got 0xff
+# !!! DM[        116] - WRONG. Expected 0x0f  Got 0xff
+# !!! DM[        117] - WRONG. Expected 0x05  Got 0xff
+#     DM[        118] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[        119] - GOOD. Expected 0x05  Got 0x05
+#     DM[        120] - GOOD. Expected 0xbd  Got 0xbd
+#     DM[        121] - GOOD. Expected 0x01  Got 0x01
+#     DM[        122] - GOOD. Expected 0xcf  Got 0xcf
+#     DM[        123] - GOOD. Expected 0x04  Got 0x04
+# last instruction =  361
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 67815 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+quit -sim
+# End time: 16:22:28 on Mar 06,2022, Elapsed time: 0:15:17
+# Errors: 0, Warnings: 1
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 16:22:47 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+add wave -position insertpoint sim:/FinalSubmission_tb/DUT/*
+run -all
+# *** P1 Start
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
+# last instruction =  189
+# *** P2 Start
+#     DM[         94] - GOOD. Expected 0x26  Got 0x26
+#     DM[         95] - GOOD. Expected 0x00  Got 0x00
+# !!! DM[         96] - WRONG. Expected 0x6e  Got 0xff
+# !!! DM[         97] - WRONG. Expected 0x07  Got 0xff
+# !!! DM[         98] - WRONG. Expected 0xab  Got 0xff
+# !!! DM[         99] - WRONG. Expected 0x02  Got 0xff
+# !!! DM[        100] - WRONG. Expected 0xxx  Got 0x97
+# !!! DM[        101] - WRONG. Expected 0xxx  Got 0x01
+# !!! DM[        102] - WRONG. Expected 0x4f  Got 0x13
+#     DM[        103] - GOOD. Expected 0x03  Got 0x03
+# !!! DM[        104] - WRONG. Expected 0xe1  Got 0xff
+# !!! DM[        105] - WRONG. Expected 0x07  Got 0xff
+# !!! DM[        106] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        107] - WRONG. Expected 0xxx  Got 0xff
+#     DM[        108] - GOOD. Expected 0x8a  Got 0x8a
+#     DM[        109] - GOOD. Expected 0x07  Got 0x07
+# !!! DM[        110] - WRONG. Expected 0x04  Got 0xff
+# !!! DM[        111] - WRONG. Expected 0x04  Got 0xff
+# !!! DM[        112] - WRONG. Expected 0x43  Got 0xff
+# !!! DM[        113] - WRONG. Expected 0x02  Got 0xff
+# !!! DM[        114] - WRONG. Expected 0x33  Got 0xff
+# !!! DM[        115] - WRONG. Expected 0x03  Got 0xff
+# !!! DM[        116] - WRONG. Expected 0x0f  Got 0xff
+# !!! DM[        117] - WRONG. Expected 0x05  Got 0xff
+#     DM[        118] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[        119] - GOOD. Expected 0x05  Got 0x05
+#     DM[        120] - GOOD. Expected 0xbd  Got 0xbd
+#     DM[        121] - GOOD. Expected 0x01  Got 0x01
+#     DM[        122] - GOOD. Expected 0xcf  Got 0xcf
+#     DM[        123] - GOOD. Expected 0x04  Got 0x04
+# last instruction =  361
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 67815 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+quit -sim
+# End time: 17:46:11 on Mar 06,2022, Elapsed time: 1:23:24
+# Errors: 0, Warnings: 1
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 17:46:38 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+run -all
+# *** P1 Start
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
+# last instruction =  189
+# *** P2 Start
+#     DM[         94] - GOOD. Expected 0x26  Got 0x26
+#     DM[         95] - GOOD. Expected 0x00  Got 0x00
+#     DM[         96] - GOOD. Expected 0x6e  Got 0x6e
+#     DM[         97] - GOOD. Expected 0x07  Got 0x07
+#     DM[         98] - GOOD. Expected 0xab  Got 0xab
+#     DM[         99] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        100] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        101] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        102] - WRONG. Expected 0x4f  Got 0x13
+#     DM[        103] - GOOD. Expected 0x03  Got 0x03
+#     DM[        104] - GOOD. Expected 0xe1  Got 0xe1
+#     DM[        105] - GOOD. Expected 0x07  Got 0x07
+# !!! DM[        106] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        107] - WRONG. Expected 0xxx  Got 0xff
+#     DM[        108] - GOOD. Expected 0x8a  Got 0x8a
+#     DM[        109] - GOOD. Expected 0x07  Got 0x07
+#     DM[        110] - GOOD. Expected 0x04  Got 0x04
+#     DM[        111] - GOOD. Expected 0x04  Got 0x04
+# !!! DM[        112] - WRONG. Expected 0x43  Got 0x12
+#     DM[        113] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        114] - WRONG. Expected 0x33  Got 0x13
+#     DM[        115] - GOOD. Expected 0x03  Got 0x03
+# !!! DM[        116] - WRONG. Expected 0x0f  Got 0x1f
+#     DM[        117] - GOOD. Expected 0x05  Got 0x05
+#     DM[        118] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[        119] - GOOD. Expected 0x05  Got 0x05
+#     DM[        120] - GOOD. Expected 0xbd  Got 0xbd
+#     DM[        121] - GOOD. Expected 0x01  Got 0x01
+#     DM[        122] - GOOD. Expected 0xcf  Got 0xcf
+#     DM[        123] - GOOD. Expected 0x04  Got 0x04
+# last instruction =  366
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 73465 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+quit -sim
+# End time: 17:50:45 on Mar 06,2022, Elapsed time: 0:04:07
+# Errors: 0, Warnings: 1
+# Compile of ALU.sv was successful.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful with warnings.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 17:50:59 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+run -all
+# *** P1 Start
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
+# last instruction =  189
+# *** P2 Start
+#     DM[         94] - GOOD. Expected 0x26  Got 0x26
+#     DM[         95] - GOOD. Expected 0x00  Got 0x00
+#     DM[         96] - GOOD. Expected 0x6e  Got 0x6e
+#     DM[         97] - GOOD. Expected 0x07  Got 0x07
+#     DM[         98] - GOOD. Expected 0xab  Got 0xab
+#     DM[         99] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        100] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        101] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        102] - WRONG. Expected 0x4f  Got 0x13
+#     DM[        103] - GOOD. Expected 0x03  Got 0x03
+#     DM[        104] - GOOD. Expected 0xe1  Got 0xe1
+#     DM[        105] - GOOD. Expected 0x07  Got 0x07
+# !!! DM[        106] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        107] - WRONG. Expected 0xxx  Got 0xff
+#     DM[        108] - GOOD. Expected 0x8a  Got 0x8a
+#     DM[        109] - GOOD. Expected 0x07  Got 0x07
+#     DM[        110] - GOOD. Expected 0x04  Got 0x04
+#     DM[        111] - GOOD. Expected 0x04  Got 0x04
+# !!! DM[        112] - WRONG. Expected 0x43  Got 0x12
+#     DM[        113] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        114] - WRONG. Expected 0x33  Got 0x13
+#     DM[        115] - GOOD. Expected 0x03  Got 0x03
+# !!! DM[        116] - WRONG. Expected 0x0f  Got 0x1f
+#     DM[        117] - GOOD. Expected 0x05  Got 0x05
+#     DM[        118] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[        119] - GOOD. Expected 0x05  Got 0x05
+#     DM[        120] - GOOD. Expected 0xbd  Got 0xbd
+#     DM[        121] - GOOD. Expected 0x01  Got 0x01
+#     DM[        122] - GOOD. Expected 0xcf  Got 0xcf
+#     DM[        123] - GOOD. Expected 0x04  Got 0x04
+# last instruction =  366
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 73465 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+quit -sim
+# End time: 17:57:13 on Mar 06,2022, Elapsed time: 0:06:14
+# Errors: 0, Warnings: 2
+# Compile of ALU.sv was successful.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful with warnings.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 17:58:03 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+run -all
+# *** P1 Start
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
+# last instruction =  189
+# *** P2 Start
+#     DM[         94] - GOOD. Expected 0x26  Got 0x26
+#     DM[         95] - GOOD. Expected 0x00  Got 0x00
+#     DM[         96] - GOOD. Expected 0x6e  Got 0x6e
+#     DM[         97] - GOOD. Expected 0x07  Got 0x07
+#     DM[         98] - GOOD. Expected 0xab  Got 0xab
+#     DM[         99] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        100] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        101] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        102] - WRONG. Expected 0x4f  Got 0x13
+#     DM[        103] - GOOD. Expected 0x03  Got 0x03
+#     DM[        104] - GOOD. Expected 0xe1  Got 0xe1
+#     DM[        105] - GOOD. Expected 0x07  Got 0x07
+# !!! DM[        106] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        107] - WRONG. Expected 0xxx  Got 0xff
+#     DM[        108] - GOOD. Expected 0x8a  Got 0x8a
+#     DM[        109] - GOOD. Expected 0x07  Got 0x07
+#     DM[        110] - GOOD. Expected 0x04  Got 0x04
+#     DM[        111] - GOOD. Expected 0x04  Got 0x04
+# !!! DM[        112] - WRONG. Expected 0x43  Got 0x12
+#     DM[        113] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        114] - WRONG. Expected 0x33  Got 0x13
+#     DM[        115] - GOOD. Expected 0x03  Got 0x03
+# !!! DM[        116] - WRONG. Expected 0x0f  Got 0x1f
+#     DM[        117] - GOOD. Expected 0x05  Got 0x05
+#     DM[        118] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[        119] - GOOD. Expected 0x05  Got 0x05
+#     DM[        120] - GOOD. Expected 0xbd  Got 0xbd
+#     DM[        121] - GOOD. Expected 0x01  Got 0x01
+#     DM[        122] - GOOD. Expected 0xcf  Got 0xcf
+#     DM[        123] - GOOD. Expected 0x04  Got 0x04
+# last instruction =  366
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 73465 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+# Compile of ALU.sv was successful.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 0 failed with no errors.
+quit -sim
+# End time: 17:59:24 on Mar 06,2022, Elapsed time: 0:01:21
+# Errors: 0, Warnings: 3
+# Compile of ALU.sv was successful.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 17:59:36 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+run -all
+# *** P1 Start
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
+# last instruction =  189
+# *** P2 Start
+#     DM[         94] - GOOD. Expected 0x26  Got 0x26
+#     DM[         95] - GOOD. Expected 0x00  Got 0x00
+#     DM[         96] - GOOD. Expected 0x6e  Got 0x6e
+#     DM[         97] - GOOD. Expected 0x07  Got 0x07
+#     DM[         98] - GOOD. Expected 0xab  Got 0xab
+#     DM[         99] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        100] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        101] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        102] - WRONG. Expected 0x4f  Got 0x13
+#     DM[        103] - GOOD. Expected 0x03  Got 0x03
+#     DM[        104] - GOOD. Expected 0xe1  Got 0xe1
+#     DM[        105] - GOOD. Expected 0x07  Got 0x07
+# !!! DM[        106] - WRONG. Expected 0xxx  Got 0xff
+# !!! DM[        107] - WRONG. Expected 0xxx  Got 0xff
+#     DM[        108] - GOOD. Expected 0x8a  Got 0x8a
+#     DM[        109] - GOOD. Expected 0x07  Got 0x07
+#     DM[        110] - GOOD. Expected 0x04  Got 0x04
+#     DM[        111] - GOOD. Expected 0x04  Got 0x04
+# !!! DM[        112] - WRONG. Expected 0x43  Got 0x12
+#     DM[        113] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        114] - WRONG. Expected 0x33  Got 0x13
+#     DM[        115] - GOOD. Expected 0x03  Got 0x03
+# !!! DM[        116] - WRONG. Expected 0x0f  Got 0x1f
+#     DM[        117] - GOOD. Expected 0x05  Got 0x05
+#     DM[        118] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[        119] - GOOD. Expected 0x05  Got 0x05
+#     DM[        120] - GOOD. Expected 0xbd  Got 0xbd
+#     DM[        121] - GOOD. Expected 0x01  Got 0x01
+#     DM[        122] - GOOD. Expected 0xcf  Got 0xcf
+#     DM[        123] - GOOD. Expected 0x04  Got 0x04
+# last instruction =  366
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 73465 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+quit -sim
+# End time: 18:01:17 on Mar 06,2022, Elapsed time: 0:01:41
+# Errors: 0, Warnings: 2
+# Compile of ALU.sv was successful.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of ALU.sv was successful.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 18:01:32 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$isunkown' is not defined.
+#    Time: 0 ps  Iteration: 0  Region: /FinalSubmission_tb/#anonblk#128830994#94#4# File: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv Line: 95
+quit -sim
+# End time: 18:01:54 on Mar 06,2022, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 4
+# Compile of ALU.sv was successful.
+# Compile of CtrlReg.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 18:02:07 on Mar 06,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+run -all
+# *** P1 Start
+#     DM[         30] - GOOD. Expected 0x90  Got 0x90
+#     DM[         31] - GOOD. Expected 0x35  Got 0x35
+#     DM[         32] - GOOD. Expected 0x7b  Got 0x7b
+#     DM[         33] - GOOD. Expected 0x48  Got 0x48
+#     DM[         34] - GOOD. Expected 0x03  Got 0x03
+#     DM[         35] - GOOD. Expected 0x30  Got 0x30
+#     DM[         36] - GOOD. Expected 0x4b  Got 0x4b
+#     DM[         37] - GOOD. Expected 0x22  Got 0x22
+#     DM[         38] - GOOD. Expected 0x7d  Got 0x7d
+#     DM[         39] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         40] - GOOD. Expected 0x41  Got 0x41
+#     DM[         41] - GOOD. Expected 0x27  Got 0x27
+#     DM[         42] - GOOD. Expected 0x36  Got 0x36
+#     DM[         43] - GOOD. Expected 0xf5  Got 0xf5
+#     DM[         44] - GOOD. Expected 0x9a  Got 0x9a
+#     DM[         45] - GOOD. Expected 0x30  Got 0x30
+#     DM[         46] - GOOD. Expected 0x9f  Got 0x9f
+#     DM[         47] - GOOD. Expected 0xf6  Got 0xf6
+#     DM[         48] - GOOD. Expected 0x82  Got 0x82
+#     DM[         49] - GOOD. Expected 0xe4  Got 0xe4
+#     DM[         50] - GOOD. Expected 0xd7  Got 0xd7
+#     DM[         51] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[         52] - GOOD. Expected 0xaa  Got 0xaa
+#     DM[         53] - GOOD. Expected 0x0f  Got 0x0f
+#     DM[         54] - GOOD. Expected 0x95  Got 0x95
+#     DM[         55] - GOOD. Expected 0x95  Got 0x95
+#     DM[         56] - GOOD. Expected 0x42  Got 0x42
+#     DM[         57] - GOOD. Expected 0x81  Got 0x81
+#     DM[         58] - GOOD. Expected 0x88  Got 0x88
+#     DM[         59] - GOOD. Expected 0x87  Got 0x87
+# last instruction =  189
+# *** P2 Start
+#     DM[         94] - GOOD. Expected 0x26  Got 0x26
+#     DM[         95] - GOOD. Expected 0x00  Got 0x00
+#     DM[         96] - GOOD. Expected 0x6e  Got 0x6e
+#     DM[         97] - GOOD. Expected 0x07  Got 0x07
+#     DM[         98] - GOOD. Expected 0xab  Got 0xab
+#     DM[         99] - GOOD. Expected 0x02  Got 0x02
+#     DM[        100] - GOOD. Expected 0xxx  Got 0xff
+#     DM[        101] - GOOD. Expected 0xxx  Got 0xff
+# !!! DM[        102] - WRONG. Expected 0x4f  Got 0x13
+#     DM[        103] - GOOD. Expected 0x03  Got 0x03
+#     DM[        104] - GOOD. Expected 0xe1  Got 0xe1
+#     DM[        105] - GOOD. Expected 0x07  Got 0x07
+#     DM[        106] - GOOD. Expected 0xxx  Got 0xff
+#     DM[        107] - GOOD. Expected 0xxx  Got 0xff
+#     DM[        108] - GOOD. Expected 0x8a  Got 0x8a
+#     DM[        109] - GOOD. Expected 0x07  Got 0x07
+#     DM[        110] - GOOD. Expected 0x04  Got 0x04
+#     DM[        111] - GOOD. Expected 0x04  Got 0x04
+# !!! DM[        112] - WRONG. Expected 0x43  Got 0x12
+#     DM[        113] - GOOD. Expected 0x02  Got 0x02
+# !!! DM[        114] - WRONG. Expected 0x33  Got 0x13
+#     DM[        115] - GOOD. Expected 0x03  Got 0x03
+# !!! DM[        116] - WRONG. Expected 0x0f  Got 0x1f
+#     DM[        117] - GOOD. Expected 0x05  Got 0x05
+#     DM[        118] - GOOD. Expected 0xd8  Got 0xd8
+#     DM[        119] - GOOD. Expected 0x05  Got 0x05
+#     DM[        120] - GOOD. Expected 0xbd  Got 0xbd
+#     DM[        121] - GOOD. Expected 0x01  Got 0x01
+#     DM[        122] - GOOD. Expected 0xcf  Got 0xcf
+#     DM[        123] - GOOD. Expected 0x04  Got 0x04
+# last instruction =  366
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(134)
+#    Time: 73465 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 134
+# End time: 18:02:41 on Mar 06,2022, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 2

@@ -63,8 +63,8 @@ initial begin
   wait (Ack);
 
   // Test the correctness
-  for(int j=30; j<60; j++) begin
-    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || DataMemoryAtFinish[j] == 2'hxx)
+  for (int j = 30; j < 60; j++) begin
+    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
       $display("    DM[%d] - GOOD. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
     else
       $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
@@ -91,8 +91,8 @@ initial begin
   wait (Ack);
 
   // Test the correctness
-  for(int j=94; j<124; j++) begin
-    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || DataMemoryAtFinish[j] == 2'hxx)
+  for (int j = 94; j < 124; j++) begin
+    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || $isunknown(DataMemoryAtFinish[j]))
       $display("    DM[%d] - GOOD. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
     else
       $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
