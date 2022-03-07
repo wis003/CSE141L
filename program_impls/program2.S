@@ -204,7 +204,7 @@ add r1 r3                       // r1 = r1 + r3
 sleft r1 r3                     // r1 = r1 << r3 (r1 = 160) 
 set 11                          // r3 = 11
 add r1 r3                       // r1 = r1 + r3 (r1 = 171)
-b_up r0 r2 r1                   // if (r0 == r2) PC = PC - r1 (loop back to PC 4 if count != 15)
+b_up r0 r2 r1                   // if (r0 == r2) PC = PC - r1 (loop back if count != 15)
 
 halt
 

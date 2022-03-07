@@ -16,7 +16,6 @@ module TopLevel(		   // you will have the same 3 ports
 	wire       	MemWrite,	   	// data_memory write enable
 			   	BranchUp,	   	// program counter branch up 
 			 	BranchDown;	// program counter branch down
-	// logic [15:0] CycleCt;	   	// standalone; NOT PC!
 
 	// Fetch stage = Program Counter + Instruction ROM
 	// program counter
@@ -68,15 +67,5 @@ module TopLevel(		   // you will have the same 3 ports
 		.DataB (DataOutB), 
 		.DataOut (MemReadValue)
 	);
-		
-	/* count number of instructions executed
-		not part of main design, potentially useful
-		This one halts when Ack is high  
-	*/
-	// always_ff @(posedge Clk)
-	// if (Reset)	   // if(start)
-	// 	CycleCt <= 0;
-	// else if(Ack == 0)   // if(!halt)
-	// 	CycleCt <= CycleCt+16'b1;
 
 endmodule
