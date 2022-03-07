@@ -761,10 +761,10 @@ add r0 r3
 sleft r0 r3                     // r0 = 160
 lw r1 r0                        // r1 = MEM[r0]
 put r3 r1                       // r5 = r1 (PATTERN stored in r5)
-set 4                           // r3 = 4
-put r3 r0                       // r4 = r0 (loop counter stored in r4)
 set 0
 and r0 r3
+set 4                           // r3 = 4
+put r3 r0                       // r4 = r0 (loop counter stored in r4)
 set 1
 add r0 r3
 set 7
@@ -811,9 +811,9 @@ set 1
 add r0 r3
 set 12
 put r3 r0                       // increment TEMP_COUNT
-set 8                           // JUMP HERE
 
 // update COUNT_A, COUNT_B
+set 8                           // JUMP HERE
 get r0 r3
 set 3
 sne r0 r3                       // r0 = (LOOP_TO_EIGHT != 3)
@@ -831,7 +831,7 @@ add r0 r1
 set 9
 put r3 r0                       // COUNT_A += TEMP_COUNT
 set 0
-sne r1 r3                       // r1 = (TEMP_COUNT != 0)
+seq r1 r3                       // r1 = (TEMP_COUNT == 0)
 set 0
 and r2 r3
 set 7
@@ -861,7 +861,7 @@ get r1 r3
 set 1
 sleft r1 r3                     // r1 = {NEXT_BYTE[6:0], 0}
 set 7
-put r3 r0
+put r3 r1
 
 // increment LOOP_TO_EIGHT
 set 8

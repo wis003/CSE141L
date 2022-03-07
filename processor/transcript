@@ -9,7 +9,63 @@
 # 8 compiles, 0 failed with no errors.
 vsim -gui work.FinalSubmission_tb
 # vsim -gui work.FinalSubmission_tb 
-# Start time: 00:14:18 on Mar 07,2022
+# Start time: 10:53:45 on Mar 07,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+add wave -position insertpoint sim:/FinalSubmission_tb/DUT/*
+run -all
+# *** P3 Start
+# !!! DM[        192] - WRONG. Expected 0x08  Got 0x00
+# !!! DM[        193] - WRONG. Expected 0x06  Got 0x80
+# !!! DM[        194] - WRONG. Expected 0x0b  Got 0x00
+# last instruction =  827
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(132)
+#    Time: 675145 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 132
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+quit -sim
+# End time: 11:37:18 on Mar 07,2022, Elapsed time: 0:43:33
+# Errors: 0, Warnings: 2
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 11:38:02 on Mar 07,2022
+# Loading sv_std.std
+# Loading work.FinalSubmission_tb
+# Loading work.TopLevel
+# Loading work.ProgCtr
+# Loading work.InstROM
+# Loading work.definitions
+# Loading work.CtrlReg_sv_unit
+# Loading work.CtrlReg
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.DataMem
+add wave -position insertpoint sim:/FinalSubmission_tb/DUT/*
+run -all
+# *** P3 Start
+# !!! DM[        192] - WRONG. Expected 0x08  Got 0x00
+# !!! DM[        193] - WRONG. Expected 0x06  Got 0x20
+# !!! DM[        194] - WRONG. Expected 0x0b  Got 0x00
+# last instruction =  827
+# ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(132)
+#    Time: 169225 ns  Iteration: 0  Instance: /FinalSubmission_tb
+# Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 132
+quit -sim
+# End time: 13:01:06 on Mar 07,2022, Elapsed time: 1:23:04
+# Errors: 0, Warnings: 1
+vsim -gui work.FinalSubmission_tb
+# vsim -gui work.FinalSubmission_tb 
+# Start time: 13:01:15 on Mar 07,2022
 # Loading sv_std.std
 # Loading work.FinalSubmission_tb
 # Loading work.TopLevel
@@ -22,77 +78,13 @@ vsim -gui work.FinalSubmission_tb
 # Loading work.ALU
 # Loading work.DataMem
 run -all
-# *** P1 Start
-#     DM[         30] - GOOD.  Expected 0x53  Got 0x53
-#     DM[         31] - GOOD.  Expected 0x09  Got 0x09
-#     DM[         32] - GOOD.  Expected 0x35  Got 0x35
-#     DM[         33] - GOOD.  Expected 0x90  Got 0x90
-#     DM[         34] - GOOD.  Expected 0xde  Got 0xde
-#     DM[         35] - GOOD.  Expected 0xde  Got 0xde
-#     DM[         36] - GOOD.  Expected 0x0a  Got 0x0a
-#     DM[         37] - GOOD.  Expected 0x5f  Got 0x5f
-#     DM[         38] - GOOD.  Expected 0xa9  Got 0xa9
-#     DM[         39] - GOOD.  Expected 0x0c  Got 0x0c
-#     DM[         40] - GOOD.  Expected 0x8b  Got 0x8b
-#     DM[         41] - GOOD.  Expected 0xde  Got 0xde
-#     DM[         42] - GOOD.  Expected 0x7b  Got 0x7b
-#     DM[         43] - GOOD.  Expected 0xb8  Got 0xb8
-#     DM[         44] - GOOD.  Expected 0x18  Got 0x18
-#     DM[         45] - GOOD.  Expected 0x81  Got 0x81
-#     DM[         46] - GOOD.  Expected 0x82  Got 0x82
-#     DM[         47] - GOOD.  Expected 0xb1  Got 0xb1
-#     DM[         48] - GOOD.  Expected 0x47  Got 0x47
-#     DM[         49] - GOOD.  Expected 0x47  Got 0x47
-#     DM[         50] - GOOD.  Expected 0xf9  Got 0xf9
-#     DM[         51] - GOOD.  Expected 0x60  Got 0x60
-#     DM[         52] - GOOD.  Expected 0xdb  Got 0xdb
-#     DM[         53] - GOOD.  Expected 0x81  Got 0x81
-#     DM[         54] - GOOD.  Expected 0x28  Got 0x28
-#     DM[         55] - GOOD.  Expected 0xd8  Got 0xd8
-#     DM[         56] - GOOD.  Expected 0x81  Got 0x81
-#     DM[         57] - GOOD.  Expected 0xdb  Got 0xdb
-#     DM[         58] - GOOD.  Expected 0x0f  Got 0x0f
-#     DM[         59] - GOOD.  Expected 0x0f  Got 0x0f
-# last instruction =  189
-# *** P2 Start
-#     DM[         94] - GOOD.  Expected 0xfa  Got 0xfa
-#     DM[         95] - GOOD.  Expected 0x07  Got 0x07
-#     DM[         96] - GOOD.  Expected 0xf0  Got 0xf0
-#     DM[         97] - GOOD.  Expected 0x06  Got 0x06
-#     DM[         98] - GOOD.  Expected 0x9d  Got 0x9d
-#     DM[         99] - GOOD.  Expected 0x01  Got 0x01
-#     DM[        100] - GOOD.  Expected 0x57  Got 0x57
-#     DM[        101] - GOOD.  Expected 0x06  Got 0x06
-#     DM[        102] - GOOD.  Expected 0x74  Got 0x74
-#     DM[        103] - GOOD.  Expected 0x06  Got 0x06
-#     DM[        104] - GOOD.  Expected 0x66  Got 0x66
-#     DM[        105] - GOOD.  Expected 0x06  Got 0x06
-#     DM[        106] - GOOD.  Expected 0xxx  Got 0xff
-#     DM[        107] - GOOD.  Expected 0xxx  Got 0xff
-#     DM[        108] - GOOD.  Expected 0xb4  Got 0xb4
-#     DM[        109] - GOOD.  Expected 0x03  Got 0x03
-#     DM[        110] - GOOD.  Expected 0x89  Got 0x89
-#     DM[        111] - GOOD.  Expected 0x02  Got 0x02
-#     DM[        112] - GOOD.  Expected 0xc4  Got 0xc4
-#     DM[        113] - GOOD.  Expected 0x02  Got 0x02
-#     DM[        114] - GOOD.  Expected 0x69  Got 0x69
-#     DM[        115] - GOOD.  Expected 0x02  Got 0x02
-#     DM[        116] - GOOD.  Expected 0x1c  Got 0x1c
-#     DM[        117] - GOOD.  Expected 0x06  Got 0x06
-#     DM[        118] - GOOD.  Expected 0xba  Got 0xba
-#     DM[        119] - GOOD.  Expected 0x06  Got 0x06
-#     DM[        120] - GOOD.  Expected 0xd3  Got 0xd3
-#     DM[        121] - GOOD.  Expected 0x00  Got 0x00
-#     DM[        122] - GOOD.  Expected 0xb6  Got 0xb6
-#     DM[        123] - GOOD.  Expected 0x04  Got 0x04
-# last instruction =  366
 # *** P3 Start
-# !!! DM[        192] - WRONG. Expected 0x08  Got 0x00
-# !!! DM[        193] - WRONG. Expected 0x06  Got 0x80
-# !!! DM[        194] - WRONG. Expected 0x0b  Got 0x00
+#     DM[        192] - Good.  Expected 0x08  Got 0x08
+#     DM[        193] - Good.  Expected 0x06  Got 0x06
+#     DM[        194] - Good.  Expected 0x0b  Got 0x0b
 # last instruction =  827
 # ** Note: $stop    : C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv(132)
-#    Time: 751375 ns  Iteration: 0  Instance: /FinalSubmission_tb
+#    Time: 168325 ns  Iteration: 0  Instance: /FinalSubmission_tb
 # Break in Module FinalSubmission_tb at C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv line 132
-# End time: 00:16:25 on Mar 07,2022, Elapsed time: 0:02:07
-# Errors: 0, Warnings: 2
+# End time: 13:01:33 on Mar 07,2022, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 1

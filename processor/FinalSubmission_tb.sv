@@ -55,57 +55,57 @@ initial begin
   // of data memory in the DataMem module during reset (this is the default
   // choice of the sample processors we gave).
 
-  // launch program in DUT
-  $display("*** P1 Start");
-  #10 Start = 0;
+  // // launch program in DUT
+  // $display("*** P1 Start");
+  // #10 Start = 0;
 
-  // Wait for done flag, then display results
-  wait (Ack);
+  // // Wait for done flag, then display results
+  // wait (Ack);
 
-  // Test the correctness
-  for (int j = 30; j < 60; j++) begin
-    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
-      $display("    DM[%d] - GOOD.  Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
-    else
-      $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
-  end
+  // // Test the correctness
+  // for (int j = 30; j < 60; j++) begin
+  //   if (DUT.DM1.Core[j] == DataMemoryAtFinish[j])
+  //     $display("    DM[%d] - GOOD.  Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+  //   else
+  //     $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+  // end
 
-  // Display any relevant diagnostic or performance measurments for P1
-  $display("last instruction = %d", DUT.PC1.ProgCtr);
+  // // Display any relevant diagnostic or performance measurments for P1
+  // $display("last instruction = %d", DUT.PC1.ProgCtr);
 
 
 
-  // Assert Start to "load" P2 as-needed
-  $display("*** P2 Start");
-  #10 Start = 'b1;
+  // // Assert Start to "load" P2 as-needed
+  // $display("*** P2 Start");
+  // #10 Start = 'b1;
 
-  // Load Data Memory for P2
-  // You can do this here, or it may be easier to simply have loaded all
-  // of data memory in the DataMem module during reset (this is the default
-  // choice of the sample processors we gave).
+  // // Load Data Memory for P2
+  // // You can do this here, or it may be easier to simply have loaded all
+  // // of data memory in the DataMem module during reset (this is the default
+  // // choice of the sample processors we gave).
 
-  // launch program in DUT
-  #10 Start = 0;
+  // // launch program in DUT
+  // #10 Start = 0;
 
-  // Wait for done flag, then display results
-  wait (Ack);
+  // // Wait for done flag, then display results
+  // wait (Ack);
 
-  // Test the correctness
-  for (int j = 94; j < 124; j++) begin
-    if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || $isunknown(DataMemoryAtFinish[j]))
-      $display("    DM[%d] - GOOD.  Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
-    else
-      $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
-  end
+  // // Test the correctness
+  // for (int j = 94; j < 124; j++) begin
+  //   if (DUT.DM1.Core[j] == DataMemoryAtFinish[j] || $isunknown(DataMemoryAtFinish[j]))
+  //     $display("    DM[%d] - GOOD.  Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+  //   else
+  //     $display("!!! DM[%d] - WRONG. Expected 0x%02h  Got 0x%02h", j, DataMemoryAtFinish[j], DUT.DM1.Core[j]);
+  // end
 
-  // Display any relevant diagnostic or performance measurments for P2
-  $display("last instruction = %d", DUT.PC1.ProgCtr);
+  // // Display any relevant diagnostic or performance measurments for P2
+  // $display("last instruction = %d", DUT.PC1.ProgCtr);
 
 
 
   // Assert Start to "load" P3 as-needed
   $display("*** P3 Start");
-  #10 Start = 'b1;
+  // #10 Start = 'b1;
 
   // Load Data Memory for P3
   // You can do this here, or it may be easier to simply have loaded all
