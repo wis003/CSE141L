@@ -35,9 +35,9 @@ module ProgCtr #(parameter L=10) (
 		// Detect falling edge of Start
 		if ((start_r == '1) && (Start == '0)) begin
 			case (StartCount)
-				1: ProgCtr <= 'd639;
-				// 2: ProgCtr <= 'd190;
-				// 3: ProgCtr <= 'd639;
+				1: ProgCtr <= 'd000;
+				2: ProgCtr <= 'd190;
+				3: ProgCtr <= 'd639;
 				default: ProgCtr <= ProgCtr;
 			endcase
 		end
