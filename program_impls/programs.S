@@ -522,7 +522,7 @@ set 4                           // mask = 0000_0100
 bxor r0 r3
 set 7
 put r3 r0                       // output MSW = 00000 !b11 b10 b9
-set 18                          // jump = 18
+set 17                          // jump = 17
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 1 (b10)
@@ -542,7 +542,7 @@ set 2                           // mask = 0000_0010
 bxor r0 r3
 set 7
 put r3 r0                       // output MSW = 00000 b11 !b10 b9
-set 18                          // jump = 18
+set 17                          // jump = 17
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 2 (b9)
@@ -562,7 +562,7 @@ set 1                           // mask = 0000_0001
 bxor r0 r3
 set 7
 put r3 r0                       // output MSW = 00000 b11 b10 !b9
-set 23                          // jump = 23
+set 22                          // jump = 22
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 3 (b8)
@@ -587,7 +587,7 @@ sleft r1 r3                     // mask = 1000_0000
 bxor r0 r1
 set 8
 put r3 r0                       // output MSW = !b8 b7:b1
-set 23                          // jump = 23
+set 22                          // jump = 22
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 4 (b7)

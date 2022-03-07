@@ -19,7 +19,6 @@ set 4                           // r3 = 4 (PROGRAM 2 LOOP STARTS HERE)
 get r0 r3                       // r0 = r4 (get counter)
 set 1                           // r3 = 1
 sleft r0 r3                     // r0 = r0 << r3 (index = counter * 2)
-add r0 r3                       // r0 += r3
 set 63
 add r0 r3
 set 2
@@ -151,8 +150,13 @@ and r1 r3
 xor r1 r1
 or r0 r1
 xor r0 r0                       // parity[16]
+set 6
+get r1 r3
+set 1
+and r1 r3
+seq r0 r1                       // r0 = (r0 == r1)
 set 10
-put r3 r0                       // parity[16] stored in r10
+put r3 r0                       // (p16 == parity[16]) stored in r10
 
 // branch to casenum logic
 set 40
@@ -198,9 +202,9 @@ and r1 r3                       // r1 = r1 & r3
 set 5                           // r3 = 5
 add r1 r3                       // r1 = r1 + r3
 sleft r1 r3                     // r1 = r1 << r3 (r1 = 160) 
-set 7                           // r3 = 7
-add r1 r3                       // r1 = r1 + r3 (r1 = 167)
-b_up r0 r2 r1                   // if (r0 == r2) PC = PC - r1 (loop back to PC 4 from PC 171 if count != 15)
+set 11                          // r3 = 11
+add r1 r3                       // r1 = r1 + r3 (r1 = 171)
+b_up r0 r2 r1                   // if (r0 == r2) PC = PC - r1 (loop back to PC 4 if count != 15)
 
 halt
 
@@ -237,7 +241,7 @@ put r3 r0                       // output MSW stored in r8
 set 9
 get r0 r3
 set 15
-slt r0 r3                       // casenum < 15
+slt r0 r3                       // r0 = casenum < 15
 set 10
 get r1 r3
 and r0 r1                       // parity[16] && casenum < 15
@@ -282,7 +286,7 @@ set 4                           // mask = 0000_0100
 bxor r0 r3
 set 7
 put r3 r0                       // output MSW = 00000 !b11 b10 b9
-set 18                          // jump = 18
+set 17                          // jump = 17
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 1 (b10)
@@ -302,7 +306,7 @@ set 2                           // mask = 0000_0010
 bxor r0 r3
 set 7
 put r3 r0                       // output MSW = 00000 b11 !b10 b9
-set 18                          // jump = 18
+set 17                          // jump = 17
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 2 (b9)
@@ -322,7 +326,7 @@ set 1                           // mask = 0000_0001
 bxor r0 r3
 set 7
 put r3 r0                       // output MSW = 00000 b11 b10 !b9
-set 23                          // jump = 23
+set 22                          // jump = 22
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 3 (b8)
@@ -347,7 +351,7 @@ sleft r1 r3                     // mask = 1000_0000
 bxor r0 r1
 set 8
 put r3 r0                       // output MSW = !b8 b7:b1
-set 23                          // jump = 23
+set 22                          // jump = 22
 b_down r0 r0 r3                 // if (r0 == r0) PC = PC + r3 (GOTO place output)
 
 // casenum 4 (b7)
@@ -482,8 +486,8 @@ set 12
 sne r0 r3                       // r0 = (casenum != 12)
 set 0
 and r2 r3
-set 15
-add r2 r3                       // jump = 15
+set 7
+add r2 r3                       // jump = 7
 set 1
 b_down r0 r3 r2                 // if (r0 == r3) PC = PC + r2 (GOTO place output)
 set 8                           // else
