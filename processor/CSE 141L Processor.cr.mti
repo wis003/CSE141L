@@ -79,7 +79,32 @@ Top level modules:
 	ALU
 End time: 21:18:36 on Mar 04,2022, Elapsed time: 0:00:01
 
-} {} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv}
+} {} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module FinalSubmission_tb
+
+Top level modules:
+	FinalSubmission_tb
+
+} {} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TopLevel
+
+Top level modules:
+	TopLevel
+
+} {} {}} {{C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv}} {0 {vlog -work work -sv {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+Start time: 21:18:37 on Mar 04,2022
+vlog -reportprogress 300 -work work -sv C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv 
+-- Compiling module TopLevel
+** Error: (vlog-13069) C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(16): near "wire": syntax error, unexpected wire, expecting ';'.
+** Error: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(27): (vlog-2730) Undefined variable: 'BranchUp'.
+** Error: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(28): (vlog-2730) Undefined variable: 'BranchDown'.
+** Error: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(48): (vlog-2730) Undefined variable: 'MemWrite'.
+End time: 21:18:37 on Mar 04,2022, Elapsed time: 0:00:00
+
+} {6.0 10.0} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/CtrlReg.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package CtrlReg_sv_unit
 -- Importing package definitions
@@ -98,38 +123,6 @@ Top level modules:
 	FinalSubmission_tb
 End time: 21:18:36 on Mar 04,2022, Elapsed time: 0:00:00
 
-} {} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/FinalSubmission_tb.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module FinalSubmission_tb
-
-Top level modules:
-	FinalSubmission_tb
-
-} {} {}} {{C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv}} {0 {vlog -work work -sv {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-Start time: 21:18:37 on Mar 04,2022
-vlog -reportprogress 300 -work work -sv C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv 
--- Compiling module TopLevel
-** Error: (vlog-13069) C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(16): near "wire": syntax error, unexpected wire, expecting ';'.
-** Error: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(27): (vlog-2730) Undefined variable: 'BranchUp'.
-** Error: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(28): (vlog-2730) Undefined variable: 'BranchDown'.
-** Error: C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv(48): (vlog-2730) Undefined variable: 'MemWrite'.
-End time: 21:18:37 on Mar 04,2022, Elapsed time: 0:00:00
-
-} {6.0 10.0} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/TopLevel.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TopLevel
-
-Top level modules:
-	TopLevel
-
-} {} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module InstROM
-
-Top level modules:
-	InstROM
-
 } {} {}} {{C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv}} {1 {vlog -work work -sv {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 Start time: 21:18:36 on Mar 04,2022
@@ -139,5 +132,12 @@ vlog -reportprogress 300 -work work -sv C:/Users/18587/Desktop/UCSD/Classes/CSE 
 Top level modules:
 	InstROM
 End time: 21:18:36 on Mar 04,2022, Elapsed time: 0:00:00
+
+} {} {}} {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/18587/Desktop/UCSD/Classes/CSE 141L/CSE141L/processor/InstROM.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module InstROM
+
+Top level modules:
+	InstROM
 
 } {} {}}
